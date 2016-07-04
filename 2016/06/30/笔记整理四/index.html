@@ -1,0 +1,732 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,笔记整理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="创建对象
+工厂模式
+12345678910111213function createPerson(name, age, job)&amp;#123;  var o = new Object();  o.name = name;  o.age = age;  o.job = job;  o.say = function()&amp;#123;    console.log(this.name + &apos; is a &apos;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记整理（四）">
+<meta property="og:url" content="http://yoursite.com/2016/06/30/笔记整理四/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="创建对象
+工厂模式
+12345678910111213function createPerson(name, age, job)&amp;#123;  var o = new Object();  o.name = name;  o.age = age;  o.job = job;  o.say = function()&amp;#123;    console.log(this.name + &apos; is a &apos;">
+<meta property="og:updated_time" content="2016-07-01T12:03:17.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记整理（四）">
+<meta name="twitter:description" content="创建对象
+工厂模式
+12345678910111213function createPerson(name, age, job)&amp;#123;  var o = new Object();  o.name = name;  o.age = age;  o.job = job;  o.say = function()&amp;#123;    console.log(this.name + &apos; is a &apos;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/30/笔记整理四/"/>
+
+  <title> 笔记整理（四） | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                笔记整理（四）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-30T12:21:00+08:00" content="2016-06-30">
+              2016-06-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/30/笔记整理四/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/30/笔记整理四/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><ul>
+<li><p>工厂模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, job</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">  o.name = name;</div><div class="line">  o.age = age;</div><div class="line">  o.job = job;</div><div class="line">  o.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is a '</span> + <span class="keyword">this</span>.age + <span class="string">' years old '</span> + <span class="keyword">this</span>.job);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">'lily'</span>, <span class="number">32</span>, <span class="string">'teacher'</span>);</div><div class="line">person1.say(); <span class="comment">// "lily is a 32 years old teacher"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数模式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.job = job;</div><div class="line">  <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is a '</span> + <span class="keyword">this</span>.age + <span class="string">' years old '</span> + <span class="keyword">this</span>.job);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 当作构造函数调用</span></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">'lily'</span>, <span class="number">32</span>, <span class="string">'teacher'</span>);</div><div class="line">person1.say(); <span class="comment">// "lily is a 32 years old teacher"</span></div><div class="line"></div><div class="line"><span class="comment">// 作为普通函数调用（全局作用下调用函数，this指向Global对象，浏览器中就是window）</span></div><div class="line">Person(<span class="string">'mu'</span>, <span class="number">35</span>, <span class="string">'doctor'</span>);</div><div class="line"><span class="built_in">window</span>.say();</div><div class="line"></div><div class="line"><span class="comment">// 在另一个对象的作用域中调用</span></div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">Person.call(o, <span class="string">'chen'</span>, <span class="number">20</span>, <span class="string">'student'</span>);</div><div class="line">o.say();</div></pre></td></tr></table></figure>
+</li>
+<li><p>原型模式</p>
+<ul>
+<li>新建函数时会创建一个<code>prototype</code>属性，该属性指向函数的原型；所有原型对象都会获得一个<code>constructor</code>属性，该属性包含一个指向<code>prototype</code>属性所在函数的指针</li>
+<li><code>__proto__</code>这个链接存在于实例<code>person1</code>与构造函数的原型对象<code>Person Prototype</code>之间，而不是存在于实例<code>person1</code>与构造函数<code>Person</code>之间</li>
+<li>原型中所有属性是被很多实例共享的</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line"><span class="comment">//   原生的constructor属性是不可枚举的，重设后[[Enumerable]]值为true</span></div><div class="line">  <span class="keyword">constructor</span>: Person,</div><div class="line">  name: "whiskey",</div><div class="line">  age: 20,</div><div class="line">  job: "student",</div><div class="line">  friends: ["chen", "lily"],</div><div class="line">  sayFriends: function()&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.friends);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line">person2.friends.push(<span class="string">"mu"</span>);</div><div class="line"><span class="comment">// 我们的初衷是只修改person2的friends属性</span></div><div class="line">person1.sayFriends(); <span class="comment">// person1.sayFriends();</span></div><div class="line">person2.sayFriends(); <span class="comment">// person1.sayFriends();</span></div></pre></td></tr></table></figure>
+<ul>
+<li>组合使用构造函数模式和原型模式<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.job = job;</div><div class="line">  <span class="keyword">this</span>.friends = [<span class="string">"lily"</span>, <span class="string">"chen"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.friends);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"whiskey"</span>, <span class="number">20</span>, <span class="string">"student"</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"tiny"</span>, <span class="number">10</span>, <span class="string">"dotaer"</span>);</div><div class="line">person2.friends.push(<span class="string">"COCO"</span>);</div><div class="line"></div><div class="line">person1.say(); <span class="comment">// ["lily", "chen"]</span></div><div class="line">person2.say(); <span class="comment">// ["lily", "chen", "COCO"]</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li><p>原型式继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">  name: <span class="string">'whiskey'</span>,</div><div class="line">  friends: [<span class="string">'lily'</span>, <span class="string">'mu'</span>],</div><div class="line">  say: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.friends);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person1 = <span class="built_in">Object</span>.create(person, &#123;</div><div class="line">  name: &#123;</div><div class="line">    value: <span class="string">'fancypy'</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 也可以通过person2.name的方式添加姓名</span></div><div class="line"><span class="comment">// var person2 = Object.create(person);</span></div><div class="line"><span class="comment">// person1.name = 'SNK';</span></div><div class="line"></div><div class="line">person1.say(); <span class="comment">// ["lily", "mu"]</span></div><div class="line"><span class="built_in">console</span>.log(person1.name); <span class="comment">// "fancypy"</span></div><div class="line">person1.friends.push(<span class="string">'coco'</span>);</div><div class="line">person1.say(); <span class="comment">// ["lily", "mu", "coco"]</span></div><div class="line"></div><div class="line"><span class="comment">// 对于不支持Object.create()的浏览器，可以使用自定义函数</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">o</span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">  F.prototype = o;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>组合继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 组合继承</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Parent.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hi, '</span> + <span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">  Parent.call(<span class="keyword">this</span>, name); <span class="comment">// 继承属性</span></div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 继承方法</span></div><div class="line">Child.prototype = <span class="keyword">new</span> Parent();</div><div class="line">Child.prototype.constructor = Child;</div><div class="line"><span class="comment">// 定义自己的方法</span></div><div class="line">Child.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'I\'m '</span> + <span class="keyword">this</span>.age + <span class="string">' years old'</span>);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> lily = <span class="keyword">new</span> Child(<span class="string">'Lily'</span>, <span class="number">20</span>);</div><div class="line"><span class="built_in">console</span>.log(lily.sayName()); <span class="comment">// "hi, Lily"</span></div><div class="line"><span class="built_in">console</span>.log(lily.sayAge()); <span class="comment">// "I'm 20 years old"</span></div><div class="line"><span class="keyword">var</span> whiskey = <span class="keyword">new</span> Child(<span class="string">'whiskey'</span>, <span class="number">30</span>);</div><div class="line"><span class="built_in">console</span>.log(whiskey.sayName()); <span class="comment">// "hi, whiskey"</span></div><div class="line"><span class="built_in">console</span>.log(whiskey.sayAge()); <span class="comment">// "I'm 30 years old"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><ul>
+<li>事件委托允许我们不必为某些特定的节点添加事件监听器，而是将事件监听器添加到这些节点的某个父节点上。事件监听器分析冒泡事件，去找到匹配的子节点元素，然后做出相应的事件响应。比较常见的情况是用<code>ul</code>元素来处理子元素<code>li</code>的事件</li>
+<li>优点<ul>
+<li>减少事件注册，节省内存</li>
+<li>对于新增的子节点无需重新绑定事件</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>仅限于支持事件冒泡的事件</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 为了测试效果，忽略不规范的HTML嵌套 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">'list'</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>222<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>333<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>444<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>555<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> list = <span class="built_in">document</span>.querySelector(<span class="string">'#list'</span>);</div><div class="line">  list.addEventListener(<span class="string">'click'</span>, fn);</div><div class="line">  <span class="comment">// 监听ul节点，通过if判断，当目标元素是li时弹出，点击p元素无效</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (e.target.nodeName == <span class="string">'LI'</span>) &#123;</div><div class="line">      alert(e.target.innerHTML);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><a href="http://codepen.io/whiskey0705/pen/WxjQBg" target="_blank" rel="external">在线demo</a></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><ul>
+<li><p><code>\b</code>：代表单词的开头或结尾，也就是单词的分界处。只匹配一个位置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/\bis\b/.test(<span class="string">'this'</span>) <span class="comment">// false</span></div><div class="line">/\bis\b/.test(<span class="string">'that is tom'</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>.</code>：匹配除了换行符<code>\n</code>以外的任意字符</p>
+</li>
+<li><code>\d</code>：匹配一位数字</li>
+<li><code>\s</code>：匹配任意空白符，包括空格、制表符、换行符、中文全角空格</li>
+<li><code>\w</code>：匹配字母或者数字或者下划线或汉字</li>
+<li><code>^</code>：匹配字符串的开始</li>
+<li><code>$</code>：匹配字符串的结束</li>
+<li><code>\</code>：字符转义 <code>\.</code>匹配<code>.</code>本身</li>
+<li><code>*</code>：重复0次或更多次</li>
+<li><code>+</code>：重复1次或更多次</li>
+<li><code>?</code>：重复0次或1次</li>
+<li><code>{n}</code>：重复n次</li>
+<li><code>{n,}</code>：重复n次或更多次</li>
+<li><code>{n,m}</code>：重复n到m次，逗号前后不能有空格</li>
+<li><p><code>[]</code>：匹配没有预定义的元字符的字符集合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[aeiou]匹配aeiou中任何一个字母</div><div class="line">[<span class="number">0</span><span class="number">-9</span>]等价于\d</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>|</code>：分支条件，从左到右满足条件就不管其他了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"into"</span>.match(<span class="regexp">/in|int/</span>) <span class="comment">// 匹配in，不会匹配int</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>g</code>：执行一个全局匹配，即找到所有匹配，而不是找到第一个之后就停止</p>
+</li>
+<li><code>i</code>：忽略大小写</li>
+<li><code>m</code>：<code>^</code>、<code>$</code>能匹配行结束符</li>
+<li><code>\W</code>：大写W，匹配任意不是字母、数字、下划线、汉字的字符</li>
+<li><code>\S</code>：大写S，匹配任意不是空白符的字符</li>
+<li><code>\D</code>：大写D，匹配任意非数字的字符</li>
+<li><code>\B</code>：大写B，匹配不是单词开头或结束的位置</li>
+<li><code>[^aeiou]</code>：匹配除了<code>aeiou</code>外的任意字符</li>
+<li>元字符：<code>(</code>,<code>[</code>,<code>{</code>,<code>^</code>,<code>$</code>,<code>|</code>,<code>)</code>,<code>?</code>,<code>*</code>,<code>+</code>,<code>.</code>,<code>]</code>,<code>}</code>，匹配本身的时候需要转义</li>
+<li><code>()</code>：捕获组，用$1表示第一组捕获</li>
+<li><code>(?:)</code>：表示非捕获组</li>
+<li><code>regexp.exp</code>：执行正则表达式，返回一个数组，数组中的第一项是匹配的整个字符串，之后每一项对应捕获组（匹配+捕获）</li>
+<li><code>regexp.test</code>：测试正则表达式，返回布尔值</li>
+<li><code>String。match</code>：返回包含结果的数组，数组中的第一项是匹配的整个字符串，之后每一项对应捕获组，没有匹配项返回null</li>
+<li><code>String.replace</code>：搜索+替换</li>
+<li><code>String.search</code>：匹配返回该str首次出现的index，不匹配返回-1</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/笔记整理/" rel="tag">#笔记整理</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/29/笔记整理三/" rel="next" title="笔记整理（三）">
+                <i class="fa fa-chevron-left"></i> 笔记整理（三）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/01/笔记整理五/" rel="prev" title="笔记整理（五）">
+                笔记整理（五） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件委托"><span class="nav-number">3.</span> <span class="nav-text">事件委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">4.</span> <span class="nav-text">正则表达式</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/06/30/笔记整理四/';
+      var disqus_title = "笔记整理（四）";
+      var disqus_url = 'http://yoursite.com/2016/06/30/笔记整理四/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

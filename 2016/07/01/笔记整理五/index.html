@@ -1,0 +1,786 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,笔记整理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Ajax
+什么是Ajax：Ajax(Asynchronous JavaScript and XML)是一种在无需重新加载整个网页的情况下能够更新部分网页的技术
+一个完整的HTTP请求过程
+
+建立TCP连接
+Web浏览器向Web服务器发送请求命令
+Web浏览器发送请求头信息
+Web服务器应答
+Web服务器发送应答头信息
+Web服务器向浏览器发送数据
+Web服务器关闭TCP连接
+
+
+HTTP状态码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记整理（五）">
+<meta property="og:url" content="http://yoursite.com/2016/07/01/笔记整理五/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="Ajax
+什么是Ajax：Ajax(Asynchronous JavaScript and XML)是一种在无需重新加载整个网页的情况下能够更新部分网页的技术
+一个完整的HTTP请求过程
+
+建立TCP连接
+Web浏览器向Web服务器发送请求命令
+Web浏览器发送请求头信息
+Web服务器应答
+Web服务器发送应答头信息
+Web服务器向浏览器发送数据
+Web服务器关闭TCP连接
+
+
+HTTP状态码">
+<meta property="og:updated_time" content="2016-07-04T03:45:05.021Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记整理（五）">
+<meta name="twitter:description" content="Ajax
+什么是Ajax：Ajax(Asynchronous JavaScript and XML)是一种在无需重新加载整个网页的情况下能够更新部分网页的技术
+一个完整的HTTP请求过程
+
+建立TCP连接
+Web浏览器向Web服务器发送请求命令
+Web浏览器发送请求头信息
+Web服务器应答
+Web服务器发送应答头信息
+Web服务器向浏览器发送数据
+Web服务器关闭TCP连接
+
+
+HTTP状态码">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/01/笔记整理五/"/>
+
+  <title> 笔记整理（五） | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                笔记整理（五）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-01T08:21:00+08:00" content="2016-07-01">
+              2016-07-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/01/笔记整理五/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/01/笔记整理五/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><ul>
+<li>什么是Ajax：Ajax(Asynchronous JavaScript and XML)是一种在无需重新加载整个网页的情况下能够更新部分网页的技术</li>
+<li><p>一个完整的HTTP请求过程</p>
+<ol>
+<li>建立TCP连接</li>
+<li>Web浏览器向Web服务器发送请求命令</li>
+<li>Web浏览器发送请求头信息</li>
+<li>Web服务器应答</li>
+<li>Web服务器发送应答头信息</li>
+<li>Web服务器向浏览器发送数据</li>
+<li>Web服务器关闭TCP连接</li>
+</ol>
+</li>
+<li><p>HTTP状态码</p>
+<ul>
+<li>1XX：信息类，表示收到Web浏览器请求，正在进一步的处理中</li>
+<li>2XX：成功，表示用户请求被正确接收，理解和处理。 200-OK</li>
+<li>3XX：重定向，表示请求没有成功，客户必须采取进一步的动作</li>
+<li>4XX：客户端错误，表示客户端提交的请求有错误。 400-NOT Found</li>
+<li>5XX：服务器错误，表示服务器不能完成对请求的处理。 500</li>
+</ul>
+</li>
+<li><p>readyState属性（表示请求响应过程的当前活动阶段，只要值发生变化都会触发一次<code>onreadystatechange</code>事件）</p>
+<ul>
+<li>0：未初始化。尚未调用<code>open()</code>方法</li>
+<li>1：启动。已经调用<code>open()</code>方法，但尚未调用<code>send()</code>方法</li>
+<li>2：发送。已经调用<code>send()</code>方法，但尚未接收到响应</li>
+<li>3：接收。已经接收到部分响应数据</li>
+<li>4：完成。已经接收到全部响应数据，而且已经可以在客户端使用了</li>
+</ul>
+</li>
+<li><p>封装</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 请求参数序列化，把对象转换为‘name1=value1&amp;name2=value2’的格式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">serialize</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!data) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">''</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> pairs = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> name <span class="keyword">in</span> data) &#123;</div><div class="line">    <span class="keyword">if</span> (!data.hasOwnProperty(name)) &#123;</div><div class="line">      <span class="keyword">continue</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> data[name] === <span class="string">'function'</span>) &#123;</div><div class="line">      contunue;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> value = data[name].toString();</div><div class="line">    name = <span class="built_in">encodeURIComponent</span>(name);</div><div class="line">    value = <span class="built_in">encodeURIComponent</span>(value);</div><div class="line">    pairs.push(name + <span class="string">'='</span> + value);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> pairs.join(<span class="string">'&amp;'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// get请求</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">url, options, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">  xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</div><div class="line">      <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>) &#123;</div><div class="line">        callback(xhr.responseText);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Requeset was unsuccessful: '</span> + xhr.status);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> URL = url + serialize(options); <span class="comment">// 如果url后没有问号，还应该加个?</span></div><div class="line">  xhr.open(<span class="string">'GET'</span>, URL, <span class="literal">true</span>);</div><div class="line">  xhr.setRequestHeader(<span class="string">'myHeader'</span>, <span class="string">'myValue'</span>); <span class="comment">// 可以省略</span></div><div class="line">  xhr.send(<span class="literal">null</span>);</div><div class="line"></div><div class="line">  <span class="comment">// post请求</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">post</span>(<span class="params">url, options, callback</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>) &#123;</div><div class="line">          callback(xhr.reponseText);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'Requeset was unsuccessful: '</span> + xhr.status);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    xhr.open(<span class="string">'POST'</span>, url, <span class="literal">true</span>);</div><div class="line">    xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</div><div class="line">    xhr.send(serialize(options));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>jQuery中的Ajax</p>
+<ul>
+<li>$.ajax([settings]) 这里的[settings]以对象的形式进行设置</li>
+<li>type：类型，“POST”或“GET”，默认为“GET”</li>
+<li>url：发送请求的地址</li>
+<li>data：是一个对象，连同请求发送到服务器的数据</li>
+<li>dataType：预期服务器返回的数据类型。如果不知道，jQuery将自动根据HTTP包MIME信息来智能判断，采用json格式的话可以设置为“json”</li>
+<li>success：是一个方法，请求成功后的回调函数。传入返回后的数据、以及包含成功代码的字符串</li>
+<li>error：是一个方法，请求失败时调用此函数。传入XMLHttpRequest对象</li>
+</ul>
+</li>
+<li><p>关于跨域</p>
+<ul>
+<li>当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域；不同域之间相互请求资源，就算作跨域</li>
+<li>因为JavaScript同源策略的限制，a.com域名下的js无法操作b.com或是c.a.com域名下的对象</li>
+<li>处理跨域方式<ul>
+<li>JSONP：通过动态<code>&lt;script&gt;</code>元素来使用，为<code>src</code>属性指定一个跨域URL，只支持GET请求。</li>
+<li>XMLHttpRequest Level2：IE10以下不支持</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>参考资料<br><a href="http://www.imooc.com/learn/250" target="_blank" rel="external">Ajax全接触</a></p>
+</li>
+</ul>
+<h2 id="this的指向"><a href="#this的指向" class="headerlink" title="this的指向"></a>this的指向</h2><ul>
+<li><p>作为对象的方法调用：this指向该对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  a: <span class="number">1</span>,</div><div class="line">  getA: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span> === obj);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">obj.getA(); <span class="comment">// 分别输出true和1</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>作为普通函数调用：this指向全局对象，在浏览器里即window对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.name = <span class="string">'globalName'</span>;</div><div class="line"><span class="keyword">var</span> myObj = &#123;</div><div class="line">  name: <span class="string">'whiskey'</span>,</div><div class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> a = myObj.getName;</div><div class="line"><span class="keyword">var</span> b = myObj.getName();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a()); <span class="comment">// "globalName" 作为普通函数调用</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// "globalName" 作为对象的方法调用</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>构造器调用</p>
+<ul>
+<li><p>通常情况下构造器里的this指向返回的这个对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MyClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> 		<span class="keyword">this</span>.name = <span class="string">'whiskey'</span>;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> MyClass();</div><div class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">// 输出"whiskey"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>如果构造器显示地返回了一个object类型的对象，那么运算结果会返回这个对象，而不是之前的<code>this</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MyClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"> 		<span class="keyword">this</span>.name = <span class="string">'whiskey'</span>;</div><div class="line"> 		<span class="keyword">return</span> &#123;</div><div class="line">   		name: <span class="string">'lily'</span> <span class="comment">// 显示返回一个对象</span></div><div class="line"> 		&#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> MyClass();</div><div class="line"><span class="built_in">console</span>.log(obj.name); <span class="comment">// 输出"lily"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Function.prototype.call 或 Function.prototype.apply调用：可以动态改变传入函数的this</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">  name: <span class="string">'whiskey'</span>,</div><div class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj2 = &#123;</div><div class="line">  name: <span class="string">'lily'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj1.getName()); <span class="comment">// whiskey</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj1.getName.call(obj2)); <span class="comment">// lily</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h2><ul>
+<li>如果传入的第一个参数为<code>null</code>，函数体内的<code>this</code>会指向默认的宿主对象，浏览器即window</li>
+<li>区别：<code>apply</code>接收的第二个参数是个集合，可以是数组或者类数组；</li>
+<li><p>用途</p>
+<ul>
+<li><p>改变<code>this</code>指向</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line"> 		name: <span class="string">'whiskey'</span>,</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj2 = &#123;</div><div class="line"> 		name: <span class="string">'lily'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.name = <span class="string">'window'</span>;</div><div class="line"></div><div class="line">getName(); <span class="comment">// 输出window</span></div><div class="line">getName.call(obj1); <span class="comment">// 输出whiskey</span></div><div class="line">getName.call(obj2); <span class="comment">// 输出lily</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>借用其他对象的方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">	// 实例一</div><div class="line">	var A = function(name, age) &#123;</div><div class="line">  		this.name = name;</div><div class="line">  		this.age = age;</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	var B = function() &#123;</div><div class="line">  		A.apply(this, arguments); // B得到了A的所有属性</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	B.prototype.say = function() &#123;</div><div class="line">  		return this.name + ' is ' + this.age + ' years old';</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">	var b = new B('whiskey', 20);</div><div class="line">	console.log(b.say()); // "whiskey is 20 years old"</div><div class="line">	</div><div class="line">	// 实例二</div><div class="line">	var maxNum = Math.max.apply(null, [1, 2, 3, 4, 5]);</div><div class="line">	console.log(maxNum); // 5</div><div class="line"></div><div class="line">	// 实例三</div><div class="line">	var a = &#123;&#125;;</div><div class="line">	Array.prototype.push.call(a, 'first', '语文');</div><div class="line">	console.log(a[0]); // first</div><div class="line">	console.log(a[1]); // 语文</div><div class="line">	``` </div><div class="line">## 比较undefined和null</div><div class="line">- `undefined`(表示“没有值”)</div><div class="line">	- 未初始化的变量是`undefined`</div><div class="line">	- 缺失的参数是`undefined`</div><div class="line">	- 访问不存在的属性，返回`undefined`</div><div class="line">	- 函数中没有显示返回值，函数会隐式返回`undefined`</div><div class="line"></div><div class="line">- `null`(表示“没有对象”，将属性或者元素设置为空)</div><div class="line">	- `null`是原型链坠顶端的元素</div><div class="line">	- 当字符串中没有匹配到正则表达式的结果时，`RegExp.prototype.exec()`返回`null`</div><div class="line"></div><div class="line">## 闭包</div><div class="line">闭包指有权访问另一个函数作用域中变量的函数;利用闭包可以突破作用链域，将函数内部的变量和方法传递到外部</div><div class="line">- 解决循环问题 [在线demo](http://codepen.io/whiskey0705/pen/jAmaoZ)</div><div class="line">```html</div><div class="line">  &lt;div&gt;0&lt;/div&gt;</div><div class="line">  &lt;div&gt;1&lt;/div&gt;</div><div class="line">  &lt;div&gt;2&lt;/div&gt;</div><div class="line">  &lt;div&gt;3&lt;/div&gt;</div><div class="line">  &lt;div&gt;4&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> aDiv = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aDiv.length; i++) &#123;</div><div class="line">	aDiv[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		alert(i); <span class="comment">// click事件触发时for循环已经结束，所以alert都是5</span></div><div class="line">	&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 利用IIFE创建闭包后</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aDiv.length; i++) &#123;</div><div class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    aDiv[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    alert(n); <span class="comment">// alert跟节点对应的数</span></div><div class="line">  &#125;;</div><div class="line">  &#125;)(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>外部访问函数内部定义的变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> name = <span class="string">'whiskey'</span>;</div><div class="line">  <span class="keyword">var</span> say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'hi, '</span> + name);</div><div class="line">  &#125;;</div><div class="line">  <span class="keyword">return</span> say;</div><div class="line">&#125;</div><div class="line"><span class="comment">// say(); // 报错， say is not defined</span></div><div class="line"><span class="keyword">var</span> sayName = sayHi();</div><div class="line">sayName(); <span class="comment">// 'hi, whiskey'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>封装</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">countNum</span>(<span class="params">initial</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> num = initial || <span class="number">0</span>;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    inc: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      num += <span class="number">1</span>;</div><div class="line">      <span class="keyword">return</span> num;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> c1 = countNum();</div><div class="line"><span class="built_in">console</span>.log(c1.inc()); <span class="comment">//1 第一次调用</span></div><div class="line"><span class="built_in">console</span>.log(c1.inc()); <span class="comment">//2 第二次调用</span></div><div class="line"><span class="keyword">var</span> c2 = countNum(<span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(c2.inc()); <span class="comment">// 11</span></div><div class="line"><span class="built_in">console</span>.log(c2.inc()); <span class="comment">// 12</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>多参函数变单参函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> x + y;</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> addSum = sum(<span class="number">1</span>);</div><div class="line"><span class="built_in">console</span>.log(addSum(<span class="number">1</span>)); <span class="comment">//2</span></div><div class="line"><span class="keyword">var</span> addSum2 = sum(<span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(addSum2(<span class="number">10</span>)); <span class="comment">//20</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/笔记整理/" rel="tag">#笔记整理</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/30/笔记整理四/" rel="next" title="笔记整理（四）">
+                <i class="fa fa-chevron-left"></i> 笔记整理（四）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/01/笔记整理六/" rel="prev" title="笔记整理（六）">
+                笔记整理（六） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this的指向"><span class="nav-number">2.</span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call和apply"><span class="nav-number">3.</span> <span class="nav-text">call和apply</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/07/01/笔记整理五/';
+      var disqus_title = "笔记整理（五）";
+      var disqus_url = 'http://yoursite.com/2016/07/01/笔记整理五/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

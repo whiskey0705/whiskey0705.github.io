@@ -1,0 +1,728 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="笔记整理,BFC," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="百分比做单位时的参照物
+padding，margin的百分比按照父元素的宽度计算
+定位元素top，right，bottom，left按父元素的高度计算
+
+H5新增标签
+&amp;lt;article&amp;gt;元素： 可以单独发布、重用；可以是一篇帖子、一篇文章、一则用户评论、一个可交互的widget
+&amp;lt;section&amp;gt;元素： 按主题将内容分组，通常会有标题；并非语义化的div；但你希望这个元素的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记整理（二）">
+<meta property="og:url" content="http://yoursite.com/2016/06/28/笔记整理二/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="百分比做单位时的参照物
+padding，margin的百分比按照父元素的宽度计算
+定位元素top，right，bottom，left按父元素的高度计算
+
+H5新增标签
+&amp;lt;article&amp;gt;元素： 可以单独发布、重用；可以是一篇帖子、一篇文章、一则用户评论、一个可交互的widget
+&amp;lt;section&amp;gt;元素： 按主题将内容分组，通常会有标题；并非语义化的div；但你希望这个元素的">
+<meta property="og:image" content="http://7xrwo9.com1.z0.glb.clouddn.com/h5layout.png">
+<meta property="og:updated_time" content="2016-07-01T12:00:19.710Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记整理（二）">
+<meta name="twitter:description" content="百分比做单位时的参照物
+padding，margin的百分比按照父元素的宽度计算
+定位元素top，right，bottom，left按父元素的高度计算
+
+H5新增标签
+&amp;lt;article&amp;gt;元素： 可以单独发布、重用；可以是一篇帖子、一篇文章、一则用户评论、一个可交互的widget
+&amp;lt;section&amp;gt;元素： 按主题将内容分组，通常会有标题；并非语义化的div；但你希望这个元素的">
+<meta name="twitter:image" content="http://7xrwo9.com1.z0.glb.clouddn.com/h5layout.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/28/笔记整理二/"/>
+
+  <title> 笔记整理（二） | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                笔记整理（二）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T20:21:00+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/28/笔记整理二/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/28/笔记整理二/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="百分比做单位时的参照物"><a href="#百分比做单位时的参照物" class="headerlink" title="百分比做单位时的参照物"></a>百分比做单位时的参照物</h2><ul>
+<li><code>padding</code>，<code>margin</code>的百分比按照父元素的<code>宽度</code>计算</li>
+<li>定位元素<code>top</code>，<code>right</code>，<code>bottom</code>，<code>left</code>按父元素的<code>高度</code>计算</li>
+</ul>
+<h2 id="H5新增标签"><a href="#H5新增标签" class="headerlink" title="H5新增标签"></a>H5新增标签</h2><ul>
+<li><code>&lt;article&gt;</code>元素： 可以单独发布、重用；可以是一篇帖子、一篇文章、一则用户评论、一个可交互的widget</li>
+<li><code>&lt;section&gt;</code>元素： 按主题将内容分组，通常会有标题；并非语义化的<code>div</code>；但你希望这个元素的内容体现在文档的提纲中时使用</li>
+<li><code>&lt;nav&gt;</code>元素： 导航栏专属，有利于SEO，可以包裹在<code>ul、li</code>外</li>
+<li><code>&lt;aside&gt;</code>元素： 通常表现为侧边栏内容</li>
+<li><code>&lt;header&gt;</code>元素： HTML文档的头部，代替<code>div class=&#39;header&#39;</code> </li>
+<li><code>&lt;footer&gt;</code>元素： 作用同<code>&lt;header&gt;</code></li>
+<li><code>&lt;address&gt;</code>元素： 代表与最近父级<code>&lt;article&gt;</code>或整个文档关联的联系人信息</li>
+<li><code>&lt;hr&gt;</code>元素： HTML5中重新定义为不同主题内容间的分隔符；区块内容间不需要<code>&lt;hr&gt;</code></li>
+<li><code>&lt;blockquote&gt;</code>元素： 引用来自其他来源的内容；<code>cite</code>属性表示该来源的URL</li>
+<li><code>&lt;figure&gt;</code>元素： 比较独立的，被主要内容引用的部分；插图\图表\照片\代码；通常有个标题<code>&lt;figcaption&gt;</code></li>
+<li><code>&lt;main&gt;</code>元素： 文档的主要内容，应用的核心功能；唯一</li>
+<li><code>&lt;em&gt;</code>元素： 表示侧重点的强调</li>
+<li><code>&lt;strong&gt;</code>元素： 表示内容的重要性</li>
+<li><code>&lt;i&gt;</code>元素： 表示另一种叙述方式；画外音/分类学名词/外来语片段</li>
+<li><code>&lt;b&gt;</code>元素： 表示某种需要引起注意，却又没有其他额外语义的内容；摘要中的关键词/评论中的产品名称</li>
+<li><code>&lt;small&gt;</code>元素： 免责声明/许可证声明/注意事项</li>
+<li><code>&lt;s&gt;</code>元素： 表示不再准确或不再相关的内容 <code>&lt;s&gt;原价￥80&lt;/s&gt;</code></li>
+<li><code>&lt;u&gt;</code>元素： 表示用非文本进行标注的内容；中文专名/拼写检查的错误内容</li>
+<li><code>&lt;cite&gt;</code>元素： 引述的作品标题；书/论文/散文/电影/歌曲</li>
+<li><code>&lt;abbr&gt;</code>元素： 其<code>title</code>属性的含义为缩写的全称 <code>&lt;p title=&#39;why the face&#39;&gt;WTF&lt;/p&gt;</code></li>
+<li><code>&lt;dfn&gt;</code>元素： 用来展现一个术语的定义实例</li>
+<li><p><code>&lt;img&gt;</code>元素</p>
+<ul>
+<li>有src属性且alt属性为空字符： 代表装饰用图</li>
+<li>有src属性且alt属性为非空字符： 代表图为文档内容的一部分</li>
+<li><p>有src属性但无alt属性： 代表图为内容的一部分，但无等价的文本内容</p>
+<p><img src="http://7xrwo9.com1.z0.glb.clouddn.com/h5layout.png" alt="h5标签布局应用"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><a href="http://justineo.github.io/slideshows/semantic-html/#/7/1" target="_blank" rel="external">参考资料</a></h3><h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2><ul>
+<li>static：默认的position属性，无法设置top/right/bottom/left</li>
+<li>relative： 相对于元素本身在普通流中的初始位置；元素未脱离普通流，显性设置<code>top</code>等属性后，原来的位置仍保留</li>
+<li>absolute： 相对于距离最近的已定位祖先元素（position值为非static），如果不存在则相对于原始容器；元素脱离普通流</li>
+<li>fixed： 页面滚动时，元素一直出现在屏幕固定位置；元素脱离普通流</li>
+<li>sticky： 实验属性，通俗点说是相对定位和固定定位的结合体，设置了该属性的元素：<ul>
+<li>不会脱离普通流，并保留元素在文档流中占位的大小</li>
+<li>若元素在普通流中的的位置超出了容器的可视区域，则元素固定在容器内的指定位置</li>
+<li>当祖先元素整体超出了容器的可视区域后，position由<code>fixed</code>转为<code>relative</code></li>
+<li>激活条件：至少设置top，bottom，left，right中的一个</li>
+<li>一种应用场景——单词字母表。比如字母B下有3个单词boy、body、beauty，然后是字母C，依次下去。当B字母下的单词还在显示屏上的时候，字母B的position属性为fixed固定显示在屏幕上，当以B开头的单词在屏幕上消失后，字母B的position属性变为relative</li>
+<li><a href="http://codepen.io/whiskey0705/pen/oxYVNV" target="_blank" rel="external">在线demo</a> 用firefox打开</li>
+</ul>
+</li>
+</ul>
+<h3 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a><a href="http://efe.baidu.com/blog/position-sticky/" target="_blank" rel="external">参考资料</a></h3><h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>块级格式化上下文（block formatting context） 是页面 CSS 视觉渲染的一部分。它是用于决定块盒子的布局及浮动相互影响的一个区域。</p>
+<h3 id="如何创建BFC"><a href="#如何创建BFC" class="headerlink" title="如何创建BFC"></a>如何创建BFC</h3><ul>
+<li>浮动 (元素的 float 不为 none)</li>
+<li>绝对定位元素 (元素的 position 为 absolute 或 fixed)</li>
+<li>行内块 inline-blocks (元素的 display: inline-block)</li>
+<li>表格单元格 (元素的 display: table-cell，HTML表格单元格默认属性)</li>
+<li>表格标题 (元素的 display: table-caption, HTML表格标题默认属性)</li>
+<li><strong>overflow 的值不为 visible的元素</strong></li>
+<li>弹性盒子 flex boxes (元素的 display: flex 或 inline-flex)</li>
+<li>根元素或其它包含它的元素</li>
+</ul>
+<h3 id="BFC的作用"><a href="#BFC的作用" class="headerlink" title="BFC的作用"></a>BFC的作用</h3><ul>
+<li>不合浮动元素重叠 &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/qNrXGY" target="_blank" rel="external">在线demo</a></li>
+<li>清除元素内部浮动 &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/gMmGbN" target="_blank" rel="external">在线demo</a></li>
+<li>解决上下相邻两个元素margin重叠 &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/aZJLBK" target="_blank" rel="external">在线demo</a></li>
+</ul>
+<h3 id="参考资料-2"><a href="#参考资料-2" class="headerlink" title="参考资料"></a><a href="http://www.cnblogs.com/pigtail/archive/2013/01/23/2871627.html" target="_blank" rel="external">参考资料</a></h3>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记整理/" rel="tag">#笔记整理</a>
+          
+            <a href="/tags/BFC/" rel="tag">#BFC</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/27/笔记整理一/" rel="next" title="笔记整理（一）">
+                <i class="fa fa-chevron-left"></i> 笔记整理（一）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/29/笔记整理三/" rel="prev" title="笔记整理（三）">
+                笔记整理（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#百分比做单位时的参照物"><span class="nav-number">1.</span> <span class="nav-text">百分比做单位时的参照物</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H5新增标签"><span class="nav-number">2.</span> <span class="nav-text">H5新增标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">2.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#position"><span class="nav-number">3.</span> <span class="nav-text">position</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-1"><span class="nav-number">3.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC"><span class="nav-number">4.</span> <span class="nav-text">BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何创建BFC"><span class="nav-number">4.1.</span> <span class="nav-text">如何创建BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC的作用"><span class="nav-number">4.2.</span> <span class="nav-text">BFC的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-2"><span class="nav-number">4.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/06/28/笔记整理二/';
+      var disqus_title = "笔记整理（二）";
+      var disqus_url = 'http://yoursite.com/2016/06/28/笔记整理二/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

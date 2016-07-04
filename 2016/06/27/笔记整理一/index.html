@@ -1,0 +1,718 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="布局,笔记整理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="居中布局
+水平居中
+行内元素：设置父元素text-align：center &amp;gt;&amp;gt;在线demo
+块级元素：对自身设置宽度，同时margin：0 auto &amp;gt;&amp;gt;在线demo
+多个块级元素
+（方法一）设置父元素text-align：center，块级元素display：inline-block &amp;gt;&amp;gt;在线demo
+（方法二）设置父元素display：flex； just">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记整理（一）">
+<meta property="og:url" content="http://yoursite.com/2016/06/27/笔记整理一/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="居中布局
+水平居中
+行内元素：设置父元素text-align：center &amp;gt;&amp;gt;在线demo
+块级元素：对自身设置宽度，同时margin：0 auto &amp;gt;&amp;gt;在线demo
+多个块级元素
+（方法一）设置父元素text-align：center，块级元素display：inline-block &amp;gt;&amp;gt;在线demo
+（方法二）设置父元素display：flex； just">
+<meta property="og:updated_time" content="2016-07-01T12:02:53.822Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记整理（一）">
+<meta name="twitter:description" content="居中布局
+水平居中
+行内元素：设置父元素text-align：center &amp;gt;&amp;gt;在线demo
+块级元素：对自身设置宽度，同时margin：0 auto &amp;gt;&amp;gt;在线demo
+多个块级元素
+（方法一）设置父元素text-align：center，块级元素display：inline-block &amp;gt;&amp;gt;在线demo
+（方法二）设置父元素display：flex； just">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/27/笔记整理一/"/>
+
+  <title> 笔记整理（一） | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                笔记整理（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-27T19:21:15+08:00" content="2016-06-27">
+              2016-06-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/27/笔记整理一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/27/笔记整理一/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h2><ul>
+<li><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
+<li>行内元素：设置父元素<code>text-align：center</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/aNpyQN" target="_blank" rel="external">在线demo</a></li>
+<li>块级元素：对自身设置宽度，同时<code>margin：0 auto</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/wGgqRY" target="_blank" rel="external">在线demo</a></li>
+<li>多个块级元素<ul>
+<li>（方法一）设置父元素<code>text-align：center</code>，块级元素<code>display：inline-block</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/ZWLJgG?editors=1100" target="_blank" rel="external">在线demo</a></li>
+<li>（方法二）设置父元素<code>display：flex； justify-content：center</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/MyJEww" target="_blank" rel="external">在线demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ul>
+<li><p>行内元素</p>
+<ul>
+<li>内容单行显示<ul>
+<li>（方法一）设置行内元素<code>height和line-height</code>为相同值&gt;&gt;<a href="http://codepen.io/whiskey0705/pen/BKpwZE" target="_blank" rel="external">在线demo</a></li>
+<li>（方法二）设置父元素上下<code>padding</code>为相同值&gt;&gt;<a href="http://codepen.io/whiskey0705/pen/BKpwZE" target="_blank" rel="external">在线demo</a></li>
+</ul>
+</li>
+<li>内容多行显示<ul>
+<li>设置父元素<code>display：table-cell；vertical-align：middle</code>&gt;&gt;<a href="http://codepen.io/whiskey0705/pen/xOqgXb" target="_blank" rel="external">在线demo</a></li>
+</ul>
+</li>
+<li>隐元素 &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/LZWxdN" target="_blank" rel="external">在线demo</a><ul>
+<li>设置子元素<code>display：inline-block；vertical-align：middle</code></li>
+<li>给父元素添加<code>.ghost</code>的伪元素</li>
+<li><code>.ghost::before{content:&#39;&#39;;display:inline-block;height:100%;width:1%;vertical-align:middle}</code></li>
+<li>因为子元素的<code>display</code>转换为<code>inline-block</code>，所以不仅仅适用于行内元素</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>块级元素</p>
+<ul>
+<li>元素高度已知：设置父元素<code>position：relative</code>；子元素<code>position:absolute; top:50%; margin-top:-height/2</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/YWZNMx" target="_blank" rel="external">在线demo</a></li>
+<li>元素高度未知：设置父元素<code>position：relative</code>；子元素<code>position:absolute; top:50%; transform：translateY（-50%）</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/YWZNMx" target="_blank" rel="external">在线demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>水平垂直同时居中</p>
+<ul>
+<li>（方法一）在<code>块级元素高度已知</code>实现垂直居中的前提下增加水平居中<code>.child {left：50%；margin-left：-width/2}</code></li>
+<li>（方法二）在<code>块级元素高度未知</code>实现垂直居中的前提下增加水平居中 &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/jqZPQB" target="_blank" rel="external">在线demo</a></li>
+<li>（方法三）flex：<code>.parent {display:flex; justify-content:center; align-items: center}</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/ONQVrM" target="_blank" rel="external">在线demo</a></li>
+<li>（方法四）绝对水平垂直居中：设置父元素<code>position：relative</code>同时显性指定高度；设置子元素<code>position:absolute; margin:auto;top\left\right\bottom均为0</code> &gt;&gt;<a href="http://codepen.io/whiskey0705/pen/aNqORj" target="_blank" rel="external">在线demo</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><a href="https://css-tricks.com/centering-css-complete-guide/#center-vertically" target="_blank" rel="external">参考资料</a></h3><h2 id="等高布局"><a href="#等高布局" class="headerlink" title="等高布局"></a>等高布局</h2><ul>
+<li>利用table实现等高</li>
+<li>利用flex实现等高</li>
+<li>利用负margin和正padding抵消实现等高</li>
+<li><a href="http://codepen.io/whiskey0705/pen/dXvvzd" target="_blank" rel="external">在线demo</a></li>
+</ul>
+<h3 id="参考资料-1"><a href="#参考资料-1" class="headerlink" title="参考资料"></a><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool" target="_blank" rel="external">参考资料</a></h3><h2 id="全屏布局"><a href="#全屏布局" class="headerlink" title="全屏布局"></a>全屏布局</h2><ul>
+<li><code>header</code>，<code>footer</code>定高，<code>left</code>定宽，<code>right</code>可根据内容需求生成滚动条</li>
+<li><a href="http://codepen.io/whiskey0705/full/VjbymW/" target="_blank" rel="external">在线demo</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/布局/" rel="tag">#布局</a>
+          
+            <a href="/tags/笔记整理/" rel="tag">#笔记整理</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/20160418/" rel="next" title="webstrom快捷键">
+                <i class="fa fa-chevron-left"></i> webstrom快捷键
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/28/笔记整理二/" rel="prev" title="笔记整理（二）">
+                笔记整理（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#居中布局"><span class="nav-number">1.</span> <span class="nav-text">居中布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">1.2.</span> <span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">1.3.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等高布局"><span class="nav-number">2.</span> <span class="nav-text">等高布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料-1"><span class="nav-number">2.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全屏布局"><span class="nav-number">3.</span> <span class="nav-text">全屏布局</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/06/27/笔记整理一/';
+      var disqus_title = "笔记整理（一）";
+      var disqus_url = 'http://yoursite.com/2016/06/27/笔记整理一/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

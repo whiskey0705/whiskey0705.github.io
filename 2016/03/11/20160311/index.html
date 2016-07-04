@@ -1,0 +1,808 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,jQuery," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="jQuery代码释义
+$(document).ready(function(){}) //等价于window.onload
+$(‘element’).addClass(‘class1 class2’) //选择元素，添加class
+
+选择元素$（”h1”）
+选择class$(“.class”)
+选择id$(“#id”)
+
+
+删除class removeClass()
+
+$(“#id”).remov">
+<meta property="og:type" content="article">
+<meta property="og:title" content="freecodecamp第4章学习记录和js类型判断总结">
+<meta property="og:url" content="http://yoursite.com/2016/03/11/20160311/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="jQuery代码释义
+$(document).ready(function(){}) //等价于window.onload
+$(‘element’).addClass(‘class1 class2’) //选择元素，添加class
+
+选择元素$（”h1”）
+选择class$(“.class”)
+选择id$(“#id”)
+
+
+删除class removeClass()
+
+$(“#id”).remov">
+<meta property="og:image" content="http://i.imgur.com/ajNJgIH.png">
+<meta property="og:updated_time" content="2016-07-01T12:06:20.942Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="freecodecamp第4章学习记录和js类型判断总结">
+<meta name="twitter:description" content="jQuery代码释义
+$(document).ready(function(){}) //等价于window.onload
+$(‘element’).addClass(‘class1 class2’) //选择元素，添加class
+
+选择元素$（”h1”）
+选择class$(“.class”)
+选择id$(“#id”)
+
+
+删除class removeClass()
+
+$(“#id”).remov">
+<meta name="twitter:image" content="http://i.imgur.com/ajNJgIH.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/11/20160311/"/>
+
+  <title> freecodecamp第4章学习记录和js类型判断总结 | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                freecodecamp第4章学习记录和js类型判断总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-11T21:12:55+08:00" content="2016-03-11">
+              2016-03-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/11/20160311/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/11/20160311/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="jQuery代码释义"><a href="#jQuery代码释义" class="headerlink" title="jQuery代码释义"></a>jQuery代码释义</h2><ul>
+<li>$(document).ready(function(){}) //等价于window.onload</li>
+<li><p>$(‘element’).addClass(‘class1 class2’) //选择元素，添加class</p>
+<ul>
+<li>选择元素$（”h1”）</li>
+<li>选择class$(“.class”)</li>
+<li>选择id$(“#id”)</li>
+</ul>
+</li>
+<li><p>删除class removeClass()</p>
+<ul>
+<li>$(“#id”).removeClass(“class1”)</li>
+</ul>
+</li>
+<li>替换css样式 .css()<ul>
+<li>$(“#id”).css(“color”, “red”)</li>
+</ul>
+</li>
+<li><p>使元素失效.prop(“disabled”, true)</p>
+<ul>
+<li>$(“#id”).prop(“disabled”, true)</li>
+</ul>
+</li>
+<li><p>.html()可以改变标签和标签内的内容</p>
+<ul>
+<li>$（”h3”）.html(“<code>&lt;h1&gt;</code>123<code>&lt;/h1&gt;</code> “) //把h3标签以及标签内的内容全部替换为好h1和123</li>
+</ul>
+</li>
+<li>.text()只改变标签里的内容，无法改变原标签</li>
+<li>.remove() 与removeClass（）相似，只不过这次移除的是html上的元素，不需要传参数<ul>
+<li>$(#id1).remove() //把id1这个元素从html的dom里移除了</li>
+</ul>
+</li>
+<li>.appendTo() 把一个元素添加到另一个元素内部的最后一位<ul>
+<li>$(“#id1”).appendTo(“#id2”) 把id1这个元素移到id2这个元素的内部</li>
+</ul>
+</li>
+<li>.clone（） 克隆一个元素，一般与.appendTo（）一起使用<ul>
+<li>$(“#id1”).clone().appendTo(“#id2”) 把id1元素克隆一份添加到id2的最末尾</li>
+</ul>
+</li>
+<li>.parent() 返回选取元素的父元素<ul>
+<li>$(“#id1”).parent()  返回id1元素的父元素 </li>
+</ul>
+</li>
+<li>.children() 和parent（）相似，但是可以接受一个参数<ul>
+<li>$(“#id1”).children(“div#id2”) 选取id1元素下的id为id2的div，（）内可以指定标签+id或者class精确定位</li>
+</ul>
+</li>
+<li>用css的nth-child（n）来选择元素<ul>
+<li>$(“.class1:nth-child(2)”) 选中有类class1的元素中的第二个元素</li>
+<li>$(“.class1:odd”)选择奇数，（从0开始）偶数用even</li>
+</ul>
+</li>
+</ul>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><ul>
+<li>可以识别标准类型（Null由于历史原因显示object）</li>
+<li>不能识别具体的对象类型（function除外）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">实例</th>
+<th style="text-align:center">typeof</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Undefined</td>
+<td style="text-align:center">undefined</td>
+<td style="text-align:center">“undefined”</td>
+</tr>
+<tr>
+<td style="text-align:center">Null</td>
+<td style="text-align:center">null</td>
+<td style="text-align:center">“object”</td>
+</tr>
+<tr>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">“boolean”</td>
+</tr>
+<tr>
+<td style="text-align:center">String</td>
+<td style="text-align:center">“hello”</td>
+<td style="text-align:center">“string”</td>
+</tr>
+<tr>
+<td style="text-align:center">Number</td>
+<td style="text-align:center">123</td>
+<td style="text-align:center">“number”</td>
+</tr>
+<tr>
+<td style="text-align:center">Function</td>
+<td style="text-align:center">Math.sin</td>
+<td style="text-align:center">“function”</td>
+</tr>
+<tr>
+<td style="text-align:center">Symbol</td>
+<td style="text-align:center">Symbol()</td>
+<td style="text-align:center">“symbol”</td>
+</tr>
+<tr>
+<td style="text-align:center">Array</td>
+<td style="text-align:center">[1, 2, 3]</td>
+<td style="text-align:center">“object”</td>
+</tr>
+<tr>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">any other object</td>
+<td style="text-align:center">“object”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h2><ul>
+<li>可以识别标准类型和内置对象类型</li>
+<li>不可识别自定义类型<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> toString = <span class="built_in">Object</span>.prototype.toString;</div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>); <span class="comment">// "[object Date]"</span></div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">String</span>); <span class="comment">// "[object String]"</span></div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">Number</span>); <span class="comment">// "[object Number]"</span></div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">Array</span>); <span class="comment">// "[object Array]"</span></div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">Object</span>); <span class="comment">// "[object Object]"</span></div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">Boolean</span>); <span class="comment">// "[object Boolean]"</span></div><div class="line">toString.call(<span class="keyword">new</span> <span class="built_in">Function</span>); <span class="comment">// "[object Function]"</span></div><div class="line">toString.call(<span class="built_in">Symbol</span>()); <span class="comment">// "[object Symbol]"</span></div><div class="line">toString.call(<span class="literal">undefined</span>); <span class="comment">// "[object Undefined]"</span></div><div class="line">toString.call(<span class="literal">null</span>); <span class="comment">// "[object Null]"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><ul>
+<li>可以识别标准类型（Undefined/Null除外）</li>
+<li>可以识别内置对象类型</li>
+<li>可以识别自定义对象类型<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Person = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> arr = [];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getConstructorName</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> obj &amp;&amp; obj.constructor &amp;&amp; obj.constructor.toString().match(<span class="regexp">/function\s*([^(]*)/</span>)[<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line">getConstructorName(Person) <span class="comment">// "Object" 自定义对象</span></div><div class="line">getConstructorName(arr) <span class="comment">// "Array" 自定义数组</span></div><div class="line">getConstructorName(<span class="keyword">new</span> <span class="built_in">Date</span>) <span class="comment">// "Date" 内置对象</span></div><div class="line">getConstructorName(<span class="number">123</span>) <span class="comment">// "Number" 标准类型</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><ul>
+<li>不可判断原始类型</li>
+<li>可以判断内置对象类型</li>
+<li>可以判断自定义对象类型<br>```js<br>var Person = {};<br>var myDate = new Date();</li>
+</ul>
+<p>Person instanceof Object // true 自定义对象<br>123 instanceof Number // false 原始类型<br>myDate instanceof Date // true 内置对象类型<br>```<br>汇总如下（图片来自<a href="https://li-xinyang.gitbooks.io/frontend-notebook/content/" target="_blank" rel="external">前端开发笔记本</a>）<br><img src="http://i.imgur.com/ajNJgIH.png" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/10/20160310/" rel="next" title="freecodecamp前3章学习记录">
+                <i class="fa fa-chevron-left"></i> freecodecamp前3章学习记录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/12/20160312/" rel="prev" title="sublime快捷键">
+                sublime快捷键 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery代码释义"><span class="nav-number">1.</span> <span class="nav-text">jQuery代码释义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof"><span class="nav-number">2.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">3.</span> <span class="nav-text">Object.prototype.toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#constructor-NaN"><span class="nav-number">4.</span> <span class="nav-text">constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceof"><span class="nav-number">5.</span> <span class="nav-text">instanceof</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/03/11/20160311/';
+      var disqus_title = "freecodecamp第4章学习记录和js类型判断总结";
+      var disqus_url = 'http://yoursite.com/2016/03/11/20160311/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

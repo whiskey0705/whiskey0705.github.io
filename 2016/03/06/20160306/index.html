@@ -1,0 +1,653 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="array.concat(item…) 浅复制，不会修改原array12345var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];var b = [&apos;x&apos;, &apos;y&apos;, &apos;z&apos;];var c = a.concat(b, true);console.log(c); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;, true]console.log(a); // [&quot;a&quot;, &quot;b&quot;, &quot;c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js语言精粹第8章【方法】">
+<meta property="og:url" content="http://yoursite.com/2016/03/06/20160306/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="array.concat(item…) 浅复制，不会修改原array12345var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];var b = [&apos;x&apos;, &apos;y&apos;, &apos;z&apos;];var c = a.concat(b, true);console.log(c); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;, true]console.log(a); // [&quot;a&quot;, &quot;b&quot;, &quot;c">
+<meta property="og:updated_time" content="2016-07-01T12:08:25.167Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js语言精粹第8章【方法】">
+<meta name="twitter:description" content="array.concat(item…) 浅复制，不会修改原array12345var a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];var b = [&apos;x&apos;, &apos;y&apos;, &apos;z&apos;];var c = a.concat(b, true);console.log(c); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;, true]console.log(a); // [&quot;a&quot;, &quot;b&quot;, &quot;c">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/06/20160306/"/>
+
+  <title> js语言精粹第8章【方法】 | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js语言精粹第8章【方法】
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-06T14:19:13+08:00" content="2016-03-06">
+              2016-03-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/06/20160306/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/06/20160306/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="array-concat-item…-浅复制，不会修改原array"><a href="#array-concat-item…-浅复制，不会修改原array" class="headerlink" title="array.concat(item…) 浅复制，不会修改原array"></a>array.concat(item…) 浅复制，不会修改原array</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>];</div><div class="line"><span class="keyword">var</span> c = a.concat(b, <span class="literal">true</span>);</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// ["a", "b", "c", "x", "y", "z", true]</span></div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ["a", "b", "c"]</span></div></pre></td></tr></table></figure>
+<h2 id="array-join-separator-返回字符串"><a href="#array-join-separator-返回字符串" class="headerlink" title="array.join(separator) 返回字符串"></a>array.join(separator) 返回字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>];</div><div class="line"><span class="built_in">console</span>.log(a.join(<span class="string">''</span>)); <span class="comment">// "abcd"</span></div><div class="line"><span class="built_in">console</span>.log(a.join(<span class="string">'+'</span>)); <span class="comment">// "a+b+c+d"</span></div></pre></td></tr></table></figure>
+<h2 id="array-pop-移除array中的最后个元素并返回该元素"><a href="#array-pop-移除array中的最后个元素并返回该元素" class="headerlink" title="array.pop() 移除array中的最后个元素并返回该元素"></a>array.pop() 移除array中的最后个元素并返回该元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> c = a.pop(); </div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// "c"</span></div></pre></td></tr></table></figure>
+<h2 id="array-push-item…-把item附加到array的尾部，会修改原来的array，并返回新array的长度"><a href="#array-push-item…-把item附加到array的尾部，会修改原来的array，并返回新array的长度" class="headerlink" title="array.push(item…) 把item附加到array的尾部，会修改原来的array，并返回新array的长度"></a>array.push(item…) 把item附加到array的尾部，会修改原来的array，并返回新array的长度</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = [<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>];</div><div class="line"><span class="keyword">var</span> c = a.push(b, <span class="literal">true</span>);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ["a", "b", "c", ["x", "y", "z"], true]</span></div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 5</span></div></pre></td></tr></table></figure>
+<h2 id="array-reverse-反转array里元素的顺序，并返回array本身"><a href="#array-reverse-反转array里元素的顺序，并返回array本身" class="headerlink" title="array.reverse() 反转array里元素的顺序，并返回array本身"></a>array.reverse() 反转array里元素的顺序，并返回array本身</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.reverse();</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ["c", "b", "a"]</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// ["c", "b", "a"]  a和b都是一样的</span></div></pre></td></tr></table></figure>
+<h2 id="array-shift-移除array中的第一个元素并返回该元素，如果array是空的，返回undefined"><a href="#array-shift-移除array中的第一个元素并返回该元素，如果array是空的，返回undefined" class="headerlink" title="array.shift() 移除array中的第一个元素并返回该元素，如果array是空的，返回undefined"></a>array.shift() 移除array中的第一个元素并返回该元素，如果array是空的，返回undefined</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.shift();</div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// "a"</span></div></pre></td></tr></table></figure>
+<h2 id="array-unshift-item…-添加一个元素到array的开始部分，返回array的长度"><a href="#array-unshift-item…-添加一个元素到array的开始部分，返回array的长度" class="headerlink" title="array.unshift(item…) 添加一个元素到array的开始部分，返回array的长度"></a>array.unshift(item…) 添加一个元素到array的开始部分，返回array的长度</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> b = a.unshift(<span class="number">1</span>, <span class="string">'d'</span>);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// [1, "d", "a", "b", "c"]</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 5</span></div></pre></td></tr></table></figure>
+<h2 id="array-slice-start-end-浅复制-），如果start大于array-length，返回一个新的空数组"><a href="#array-slice-start-end-浅复制-），如果start大于array-length，返回一个新的空数组" class="headerlink" title="array.slice(start, end) 浅复制[ ），如果start大于array.length，返回一个新的空数组"></a>array.slice(start, end) 浅复制[ ），如果start大于array.length，返回一个新的空数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="built_in">console</span>.log(a.slice(<span class="number">8</span>)); <span class="comment">// []</span></div><div class="line"><span class="built_in">console</span>.log(a.slice(<span class="number">1</span>, <span class="number">5</span>)); <span class="comment">// [3, 5, 6, 'a']</span></div><div class="line"><span class="built_in">console</span>.log(a.slice(<span class="number">-2</span>, <span class="number">6</span>)); <span class="comment">// ['b']</span></div></pre></td></tr></table></figure>
+<h2 id="arr-splice-start-deleteCount-item…-该方法从array中移除一个或多个元素，并用新的item替换它们-start是移除元素的开始位置，deleteCount是要移除的个数，item会插入被移除元素的位置，返回一个包含移除元素的数组-主要用于删除元素"><a href="#arr-splice-start-deleteCount-item…-该方法从array中移除一个或多个元素，并用新的item替换它们-start是移除元素的开始位置，deleteCount是要移除的个数，item会插入被移除元素的位置，返回一个包含移除元素的数组-主要用于删除元素" class="headerlink" title="arr.splice(start, deleteCount, item…) 该方法从array中移除一个或多个元素，并用新的item替换它们 start是移除元素的开始位置，deleteCount是要移除的个数，item会插入被移除元素的位置，返回一个包含移除元素的数组, 主要用于删除元素"></a>arr.splice(start, deleteCount, item…) 该方法从array中移除一个或多个元素，并用新的item替换它们 start是移除元素的开始位置，deleteCount是要移除的个数，item会插入被移除元素的位置，返回一个包含移除元素的数组, 主要用于删除元素</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="number">1</span>, <span class="string">'b'</span>, <span class="number">10</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> r = a.splice(<span class="number">1</span>, <span class="number">2</span>, <span class="string">'ache'</span>, <span class="string">'bug'</span>);</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// ['a', 'ache', 'bug', 10, 'c']</span></div><div class="line"><span class="built_in">console</span>.log(r); <span class="comment">// [1, 'b']</span></div></pre></td></tr></table></figure>
+<h2 id="array-sort-comparefn"><a href="#array-sort-comparefn" class="headerlink" title="array.sort(comparefn)"></a>array.sort(comparefn)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = [<span class="string">'d'</span>, <span class="string">'t'</span>, <span class="string">'q'</span>, <span class="string">'a'</span>, <span class="string">'m'</span>];</div><div class="line"><span class="keyword">var</span> m = [<span class="number">1</span>, <span class="number">10</span>, <span class="number">33</span>, <span class="number">4</span>, <span class="number">98</span>, <span class="number">111</span>, <span class="number">78</span>];</div><div class="line">n.sort();</div><div class="line">m.sort();</div><div class="line"><span class="built_in">console</span>.log(n); <span class="comment">// ["a", "d", "m", "q", "t"]</span></div><div class="line"><span class="built_in">console</span>.log(m); <span class="comment">// [1, 10, 111, 33, 4, 78, 98] 数字无法排序，需借助比较函数</span></div><div class="line">m.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> a-b;</div><div class="line">&#125;); <span class="comment">// 升序排列</span></div><div class="line"><span class="built_in">console</span>.log(m); <span class="comment">// [1, 4, 10, 33, 78, 98, 111]</span></div><div class="line">m.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> b-a;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(m); <span class="comment">// [111, 98, 78, 33, 10, 4, 1]</span></div></pre></td></tr></table></figure>
+<h2 id="string-charAt-index-传入index返回该index的字符串，如果index小于0或者大于string-length，返回一个空字符串"><a href="#string-charAt-index-传入index返回该index的字符串，如果index小于0或者大于string-length，返回一个空字符串" class="headerlink" title="string.charAt(index) 传入index返回该index的字符串，如果index小于0或者大于string.length，返回一个空字符串"></a>string.charAt(index) 传入index返回该index的字符串，如果index小于0或者大于string.length，返回一个空字符串</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">"fancypy"</span>;</div><div class="line"><span class="built_in">console</span>.log(a.charAt(<span class="number">0</span>)); <span class="comment">// f</span></div><div class="line"><span class="built_in">console</span>.log(a.charAt(<span class="number">10</span>)); <span class="comment">// ""</span></div></pre></td></tr></table></figure>
+<h2 id="string-charCodeAt-index-同上，返回的是该字符的字符码位，index-lt-0-or-index-gt-str-length则返回NaN"><a href="#string-charCodeAt-index-同上，返回的是该字符的字符码位，index-lt-0-or-index-gt-str-length则返回NaN" class="headerlink" title="string.charCodeAt(index) 同上，返回的是该字符的字符码位，index &lt; 0 or index &gt; str.length则返回NaN"></a>string.charCodeAt(index) 同上，返回的是该字符的字符码位，index &lt; 0 or index &gt; str.length则返回NaN</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">"fancypy"</span>;</div><div class="line"><span class="built_in">console</span>.log(a.charCodeAt(<span class="number">0</span>)); <span class="comment">//  102</span></div><div class="line"><span class="built_in">console</span>.log(a.charCodeAt(<span class="number">10</span>)); <span class="comment">// NaN</span></div></pre></td></tr></table></figure>
+<h2 id="string-indexOf-searchString-position-在str中按从左往右的顺序查找要找到字符，如果找到返回第一个匹配字符的位置，没有找到返回‘-1’，position为可选参数，从指定的位置开始查找"><a href="#string-indexOf-searchString-position-在str中按从左往右的顺序查找要找到字符，如果找到返回第一个匹配字符的位置，没有找到返回‘-1’，position为可选参数，从指定的位置开始查找" class="headerlink" title="string.indexOf(searchString, position) 在str中按从左往右的顺序查找要找到字符，如果找到返回第一个匹配字符的位置，没有找到返回‘-1’，position为可选参数，从指定的位置开始查找"></a>string.indexOf(searchString, position) 在str中按从左往右的顺序查找要找到字符，如果找到返回第一个匹配字符的位置，没有找到返回‘-1’，position为可选参数，从指定的位置开始查找</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">"fancypy"</span>;</div><div class="line"><span class="keyword">var</span> b = a.indexOf(<span class="string">'y'</span>); </div><div class="line"><span class="keyword">var</span> c = a.indexOf(<span class="string">'y'</span>, <span class="number">5</span>);</div><div class="line"><span class="keyword">var</span> d = a.indexOf(<span class="string">'w'</span>);</div><div class="line"><span class="comment">//str.lastIndexOf()跟str.indexOf()唯一的区别是从末尾开始查找（右往左）</span></div><div class="line"><span class="keyword">var</span> bb = a.lastIndexOf(<span class="string">'y'</span>); </div><div class="line"><span class="keyword">var</span> cc = a.lastIndexOf(<span class="string">'y'</span>, <span class="number">5</span>);</div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 4 </span></div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 6</span></div><div class="line"><span class="built_in">console</span>.log(d); <span class="comment">// -1</span></div><div class="line"><span class="built_in">console</span>.log(bb); <span class="comment">// 6</span></div><div class="line"><span class="built_in">console</span>.log(cc); <span class="comment">// 4</span></div></pre></td></tr></table></figure>
+<h2 id="sting-localeCompare-that-类似array-sort比较函数的约定"><a href="#sting-localeCompare-that-类似array-sort比较函数的约定" class="headerlink" title="sting.localeCompare(that) 类似array.sort比较函数的约定"></a>sting.localeCompare(that) 类似array.sort比较函数的约定</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m = [<span class="string">'AAA'</span>, <span class="string">'A'</span>, <span class="string">'aa'</span>, <span class="string">'a'</span>, <span class="string">'Aa'</span>, <span class="string">'aaa'</span>];</div><div class="line">m.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a.localeCompare(b);</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(m); <span class="comment">//["a", "A", "aa", "Aa", "aaa", "AAA"]</span></div></pre></td></tr></table></figure>
+<h2 id="string-split-separator-limit-按照separator把str分割成片段来创建一个字符串数组，limit为可选参数，表示分割的片段数量"><a href="#string-split-separator-limit-按照separator把str分割成片段来创建一个字符串数组，limit为可选参数，表示分割的片段数量" class="headerlink" title="string.split(separator, limit) 按照separator把str分割成片段来创建一个字符串数组，limit为可选参数，表示分割的片段数量"></a>string.split(separator, limit) 按照separator把str分割成片段来创建一个字符串数组，limit为可选参数，表示分割的片段数量</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">'fancypy'</span>;</div><div class="line"><span class="built_in">console</span>.log(a.split(<span class="string">''</span>)); <span class="comment">// ["f", "a", "n", "c", "y", "p", "y"]</span></div><div class="line"><span class="built_in">console</span>.log(a.split(<span class="string">''</span>, <span class="number">3</span>)); <span class="comment">// ["f", "a", "n"]</span></div><div class="line"><span class="keyword">var</span> b = <span class="string">'999-111-33-66'</span>;</div><div class="line"><span class="built_in">console</span>.log(b.split(<span class="string">'-'</span>)); <span class="comment">// ["999", "111", "33", "66"]</span></div><div class="line"><span class="built_in">console</span>.log(b.split(<span class="string">'-'</span>, <span class="number">2</span>)); <span class="comment">// ["999", "111"]</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/04/20160304/" rel="next" title="20160304小结task002_2-JS数据类型及语言基础">
+                <i class="fa fa-chevron-left"></i> 20160304小结task002_2-JS数据类型及语言基础
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/06/20160306-2/" rel="prev" title="task002_3-DOM">
+                task002_3-DOM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#array-concat-item…-浅复制，不会修改原array"><span class="nav-number">1.</span> <span class="nav-text">array.concat(item…) 浅复制，不会修改原array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-join-separator-返回字符串"><span class="nav-number">2.</span> <span class="nav-text">array.join(separator) 返回字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-pop-移除array中的最后个元素并返回该元素"><span class="nav-number">3.</span> <span class="nav-text">array.pop() 移除array中的最后个元素并返回该元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-push-item…-把item附加到array的尾部，会修改原来的array，并返回新array的长度"><span class="nav-number">4.</span> <span class="nav-text">array.push(item…) 把item附加到array的尾部，会修改原来的array，并返回新array的长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-reverse-反转array里元素的顺序，并返回array本身"><span class="nav-number">5.</span> <span class="nav-text">array.reverse() 反转array里元素的顺序，并返回array本身</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-shift-移除array中的第一个元素并返回该元素，如果array是空的，返回undefined"><span class="nav-number">6.</span> <span class="nav-text">array.shift() 移除array中的第一个元素并返回该元素，如果array是空的，返回undefined</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-unshift-item…-添加一个元素到array的开始部分，返回array的长度"><span class="nav-number">7.</span> <span class="nav-text">array.unshift(item…) 添加一个元素到array的开始部分，返回array的长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-slice-start-end-浅复制-），如果start大于array-length，返回一个新的空数组"><span class="nav-number">8.</span> <span class="nav-text">array.slice(start, end) 浅复制[ ），如果start大于array.length，返回一个新的空数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arr-splice-start-deleteCount-item…-该方法从array中移除一个或多个元素，并用新的item替换它们-start是移除元素的开始位置，deleteCount是要移除的个数，item会插入被移除元素的位置，返回一个包含移除元素的数组-主要用于删除元素"><span class="nav-number">9.</span> <span class="nav-text">arr.splice(start, deleteCount, item…) 该方法从array中移除一个或多个元素，并用新的item替换它们 start是移除元素的开始位置，deleteCount是要移除的个数，item会插入被移除元素的位置，返回一个包含移除元素的数组, 主要用于删除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#array-sort-comparefn"><span class="nav-number">10.</span> <span class="nav-text">array.sort(comparefn)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-charAt-index-传入index返回该index的字符串，如果index小于0或者大于string-length，返回一个空字符串"><span class="nav-number">11.</span> <span class="nav-text">string.charAt(index) 传入index返回该index的字符串，如果index小于0或者大于string.length，返回一个空字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-charCodeAt-index-同上，返回的是该字符的字符码位，index-lt-0-or-index-gt-str-length则返回NaN"><span class="nav-number">12.</span> <span class="nav-text">string.charCodeAt(index) 同上，返回的是该字符的字符码位，index < 0 or index > str.length则返回NaN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-indexOf-searchString-position-在str中按从左往右的顺序查找要找到字符，如果找到返回第一个匹配字符的位置，没有找到返回‘-1’，position为可选参数，从指定的位置开始查找"><span class="nav-number">13.</span> <span class="nav-text">string.indexOf(searchString, position) 在str中按从左往右的顺序查找要找到字符，如果找到返回第一个匹配字符的位置，没有找到返回‘-1’，position为可选参数，从指定的位置开始查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sting-localeCompare-that-类似array-sort比较函数的约定"><span class="nav-number">14.</span> <span class="nav-text">sting.localeCompare(that) 类似array.sort比较函数的约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-split-separator-limit-按照separator把str分割成片段来创建一个字符串数组，limit为可选参数，表示分割的片段数量"><span class="nav-number">15.</span> <span class="nav-text">string.split(separator, limit) 按照separator把str分割成片段来创建一个字符串数组，limit为可选参数，表示分割的片段数量</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/03/06/20160306/';
+      var disqus_title = "js语言精粹第8章【方法】";
+      var disqus_url = 'http://yoursite.com/2016/03/06/20160306/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
