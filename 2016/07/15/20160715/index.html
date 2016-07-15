@@ -1,0 +1,675 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,模块," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="let声明
+在同一个函数或者同一个作用域中重复用let定义一个变量会引起TypeError，而var不会
+1234if (true) &amp;#123;  let a = 1;  let a = 2; // Identifier &apos;a&apos; has already been declared&amp;#125;
+
+在使用let声明的变量不会在块作用域中进行提升（MDN上的解释:let的暂存死区与错误）,而var声明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="let、const、模块module">
+<meta property="og:url" content="http://yoursite.com/2016/07/15/20160715/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="let声明
+在同一个函数或者同一个作用域中重复用let定义一个变量会引起TypeError，而var不会
+1234if (true) &amp;#123;  let a = 1;  let a = 2; // Identifier &apos;a&apos; has already been declared&amp;#125;
+
+在使用let声明的变量不会在块作用域中进行提升（MDN上的解释:let的暂存死区与错误）,而var声明">
+<meta property="og:updated_time" content="2016-07-15T14:05:30.559Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="let、const、模块module">
+<meta name="twitter:description" content="let声明
+在同一个函数或者同一个作用域中重复用let定义一个变量会引起TypeError，而var不会
+1234if (true) &amp;#123;  let a = 1;  let a = 2; // Identifier &apos;a&apos; has already been declared&amp;#125;
+
+在使用let声明的变量不会在块作用域中进行提升（MDN上的解释:let的暂存死区与错误）,而var声明">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/15/20160715/"/>
+
+  <title> let、const、模块module | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                let、const、模块module
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-15T22:21:00+08:00" content="2016-07-15">
+              2016-07-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/15/20160715/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/15/20160715/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="let声明"><a href="#let声明" class="headerlink" title="let声明"></a>let声明</h2><ul>
+<li><p>在同一个函数或者同一个作用域中重复用<code>let</code>定义一个变量会引起<code>TypeError</code>，而<code>var</code>不会</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</div><div class="line">  <span class="keyword">let</span> a = <span class="number">2</span>; <span class="comment">// Identifier 'a' has already been declared</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在使用<code>let</code>声明的变量不会在块作用域中进行提升（<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let#let_的暂存死区与错误" target="_blank" rel="external">MDN上的解释:let的暂存死区与错误</a>）,而<code>var</code>声明的变量会提升</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(a);</div><div class="line">  <span class="keyword">let</span> a = <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">foo(); <span class="comment">// a is not defined， 如果使用var声明，变量a会得到提升，结果输出undefined</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>let</code>声明的变量会产生块级作用域</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 用var声明</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 输出0，1，2，3，4</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"循环结束后的i值为 "</span> + i); <span class="comment">// 输出5</span></div><div class="line"></div><div class="line"><span class="comment">// 用let声明</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(i); <span class="comment">// 输出0，1，2，3，4</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"循环结束后的i值为 "</span> + i); <span class="comment">// 抛出ReferenceError: i is not defined，因为let声明的变量产生了块级作用域，所以在for循环外部无法访问</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="const声明"><a href="#const声明" class="headerlink" title="const声明"></a>const声明</h2><ul>
+<li><code>const</code>声明创建一个<strong>只读</strong>的常量，拥有块级作用域<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">  <span class="keyword">const</span> MY_NUM = <span class="number">3</span>; <span class="comment">// 在if作用域内的常量</span></div><div class="line">  </div><div class="line">  a = <span class="number">4</span>; <span class="comment">// a被重新赋值为4</span></div><div class="line">  MY_NUM = <span class="number">6</span>; <span class="comment">// 抛出错误，通过const声明的变量MY_NUM只能被赋值1次</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 4</span></div><div class="line"><span class="built_in">console</span>.log(MY_NUM); <span class="comment">// 抛出错误， MY_NUM只在if的块级作用域内</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ul>
+<li>模块模式的必备条件<ul>
+<li>必须有外部的封闭函数，该函数必须至少被调用一次（每次调用都会创建一个新的模块实例）</li>
+<li>封闭函数必须返回至少一个内部函数，这样内部函数才能在私有作用域中形成闭包，并且可以访问或者修改私有的状态</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//  模块模式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> name = <span class="string">"whiskey"</span>;</div><div class="line">  <span class="keyword">var</span> hobby = [<span class="string">"running"</span>, <span class="string">"swimming"</span>, <span class="string">"reading"</span>];</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayHobby</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(hobby.join(<span class="string">"!"</span>));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    sayName: sayName,</div><div class="line">    sayHobby: sayHobby</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> foo = coolModule();</div><div class="line">foo.sayName(); <span class="comment">// "whiskey"</span></div><div class="line">foo.sayHobby(); <span class="comment">// "running-swimming-reading"</span></div></pre></td></tr></table></figure>
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//  命名将作为公共API返回的对象</span></div><div class="line"><span class="keyword">var</span> foo = (<span class="function"><span class="keyword">function</span> <span class="title">coolModule</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">change</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//     修改公共API</span></div><div class="line">    publicAPI.identify = identify2;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">identify1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(id);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">identify2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(id.toUpperCase());</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> publicAPI = &#123;</div><div class="line">    change: change,</div><div class="line">    identify: identify1</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> publicAPI;</div><div class="line">&#125;)(<span class="string">"whiskey"</span>);</div><div class="line"></div><div class="line">foo.identify(); <span class="comment">// "whiskey"</span></div><div class="line">foo.change(); <span class="comment">// 将publicAPI的identify属性指向了identify2</span></div><div class="line">foo.identify(); <span class="comment">// "WHISKEY"</span></div></pre></td></tr></table></figure>
+<h2 id="现代的模块机制"><a href="#现代的模块机制" class="headerlink" title="现代的模块机制"></a>现代的模块机制</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModules = (<span class="function"><span class="keyword">function</span> <span class="title">Manager</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> modules = &#123;&#125;;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">define</span>(<span class="params">name, deps, impl</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; deps.length; i++) &#123;</div><div class="line">      deps[i] = modules[deps[i]];</div><div class="line">    &#125;</div><div class="line"><span class="comment">//     为模块的定义引入了包装函数，并且将返回值储存在一个根据名字来管理的模块列表中</span></div><div class="line">    modules[name] = impl.apply(impl, deps);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> modules[name];</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    define: define,</div><div class="line">    get: get</div><div class="line">  &#125;;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">myModules.define(<span class="string">"bar"</span>, [], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">who</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"This is: "</span> + who;</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    hello: hello</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">myModules.define(<span class="string">"foo"</span>, [<span class="string">"bar"</span>], <span class="function"><span class="keyword">function</span>(<span class="params">bar</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> baby = <span class="string">"whiskey"</span>;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">awesome</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(bar.hello(baby).toUpperCase());</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    awesome: awesome</div><div class="line">  &#125;;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">var</span> bar = myModules.get(<span class="string">"bar"</span>);</div><div class="line"><span class="keyword">var</span> foo = myModules.get(<span class="string">"foo"</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(bar.hello(<span class="string">"lily"</span>)); <span class="comment">// "This is: lily"</span></div><div class="line">foo.awesome(); <span class="comment">// "THIS IS: WHISKEY"</span></div></pre></td></tr></table></figure>
+<p>## </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag">#js</a>
+          
+            <a href="/tags/模块/" rel="tag">#模块</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/01/笔记整理六/" rel="next" title="笔记整理（六）">
+                <i class="fa fa-chevron-left"></i> 笔记整理（六）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let声明"><span class="nav-number">1.</span> <span class="nav-text">let声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const声明"><span class="nav-number">2.</span> <span class="nav-text">const声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">3.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">4.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#现代的模块机制"><span class="nav-number">5.</span> <span class="nav-text">现代的模块机制</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/07/15/20160715/';
+      var disqus_title = "let、const、模块module";
+      var disqus_url = 'http://yoursite.com/2016/07/15/20160715/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
