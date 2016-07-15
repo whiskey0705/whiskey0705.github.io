@@ -5,15 +5,17 @@
     
   <url>
     <loc>http://yoursite.com/2016/07/15/20160715/</loc>
-    <lastmod>2016-07-15T14:07:57.186Z</lastmod>
+    <lastmod>2016-07-15T15:22:20.750Z</lastmod>
     <data>
         <display>
-        <title>let、const、模块module</title>
+        <title>let、const、模块module、this</title>
         <pubTime>2016-07-15T14:21:00.000Z</pubTime>
         
         <tag>js</tag>
          
         <tag>模块</tag>
+         
+        <tag>this</tag>
          
          
            
