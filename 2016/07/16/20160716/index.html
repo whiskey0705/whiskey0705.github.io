@@ -1,0 +1,677 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="OLOO,原型," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="for..of
+遍历数组，返回遍历的值（普通对象无法使用）123456789var arr = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;];for(var v in arr) &amp;#123;  console.log(v); // 0,1,2 返回下标&amp;#125;for(var v of arr) &amp;#123;  console.log(v); // &quot;one&quot;, &quot;two&quot;, &quot;three&quot;，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你不知道的javascript上卷(笔记二)">
+<meta property="og:url" content="http://yoursite.com/2016/07/16/20160716/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="for..of
+遍历数组，返回遍历的值（普通对象无法使用）123456789var arr = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;];for(var v in arr) &amp;#123;  console.log(v); // 0,1,2 返回下标&amp;#125;for(var v of arr) &amp;#123;  console.log(v); // &quot;one&quot;, &quot;two&quot;, &quot;three&quot;，">
+<meta property="og:updated_time" content="2016-07-16T15:20:57.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="你不知道的javascript上卷(笔记二)">
+<meta name="twitter:description" content="for..of
+遍历数组，返回遍历的值（普通对象无法使用）123456789var arr = [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;];for(var v in arr) &amp;#123;  console.log(v); // 0,1,2 返回下标&amp;#125;for(var v of arr) &amp;#123;  console.log(v); // &quot;one&quot;, &quot;two&quot;, &quot;three&quot;，">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/16/20160716/"/>
+
+  <title> 你不知道的javascript上卷(笔记二) | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                你不知道的javascript上卷(笔记二)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-16T23:21:00+08:00" content="2016-07-16">
+              2016-07-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/16/20160716/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/07/16/20160716/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="for-of"><a href="#for-of" class="headerlink" title="for..of"></a>for..of</h2><ul>
+<li>遍历数组，返回遍历的值（普通对象无法使用）<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> v <span class="keyword">in</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// 0,1,2 返回下标</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> v <span class="keyword">of</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(v); <span class="comment">// "one", "two", "three"，返回下标对应的值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h2><ul>
+<li><code>Object.assign()</code>方法只会拷贝源对象<strong>自身的</strong>并且<strong>可枚举的属性</strong>到目标对象身上(浅复制)<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = &#123;a: <span class="number">1</span>&#125;;</div><div class="line"><span class="keyword">var</span> o2 = &#123;b: <span class="number">2</span>&#125;;</div><div class="line"><span class="keyword">var</span> o3 = &#123;c: <span class="number">3</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> newObj = <span class="built_in">Object</span>.assign(&#123;&#125;, o1,o2,o3);</div><div class="line"><span class="built_in">console</span>.log(newObj); <span class="comment">// &#123; a: 1, b: 2, c: 3 &#125;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="对象属性描述符"><a href="#对象属性描述符" class="headerlink" title="对象属性描述符"></a>对象属性描述符</h2><ul>
+<li><p><code>Object.defineProperty()</code>添加一个新属性或者修改一个已有属性</p>
+<ul>
+<li><code>writable</code>决定是否可以修改属性的值，<code>true</code>表示可以改写</li>
+<li><code>configurable</code>决定是否可以使用<code>defineProperty</code>方法来修改属性，把该值修改为<code>false</code>是单向操作 </li>
+<li><code>enumerable</code>决定是否出现在对象的属性枚举中</li>
+</ul>
+</li>
+<li><p><code>Object.preventExtensions()</code>禁止一个对象添加新属性</p>
+</li>
+<li><code>Object.seal()</code>会创建一个”密封“的对象，在一个现有的对象上调用<code>Object.preventExtensions()</code>并把所有属性标记为<code>configurable：false</code></li>
+<li><code>Object.freeze()</code>会创建一个冻结对象，在一个现有的对象上调用<code>Object.seal()</code>，并把所有属性标记为<code>writable：false</code></li>
+<li><code>Object.keys()</code>返回一个数组，包含所有可枚举属性，只会查找对象直接包含的属性</li>
+<li><code>Object.getOwnPropertyNames()</code>返回一个数组，无论是否可枚举，只会查找对象直接包含的属性</li>
+<li><p><code>Object.setPrototypeOf(Chlid.prototype,Parent.prototype)</code> ES6新增用来修改[[prototype]]关联</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES5里的原型继承需要把Chlid.prototype对象关联到Parent.prototype</span></div><div class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype);</div><div class="line"></div><div class="line"><span class="comment">// ES6里可以利用辅助函数Object.setPrototypeOf()</span></div><div class="line"><span class="built_in">Object</span>.setPrototypeOf(Chlid.prototype,Parent.prototype)；</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>isPrototypeOf()</code>和<code>Object.getPrototypeOf()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//..</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Foo();</div><div class="line"><span class="comment">// 判断是否出现在[[prototype]]链中</span></div><div class="line">Foo.prototype.isPrototyoeOf(a); <span class="comment">// true 表示Foo.prototype是否出现在a的[[prototype]]链中</span></div><div class="line"></div><div class="line"><span class="comment">// 直接获得一个对象的[[prototype]]</span></div><div class="line"><span class="built_in">Object</span>.getPrototypeOf(a) === Foo.prototype; <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="OO-vs-OLOO"><a href="#OO-vs-OLOO" class="headerlink" title="OO vs OLOO"></a>OO vs OLOO</h2><ul>
+<li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&amp;%20object%20prototypes/ch6.md#delegation-theory" target="_blank" rel="external">OLOO</a>:面向委托的设计，对象关联(objects linked to other objects)</li>
+<li><p>典型的”原型“面向对象风格</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义父类Foo</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 在Foo的prototype上定义identify方法</span></div><div class="line">Foo.prototype.identify = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">"I'm "</span> + <span class="keyword">this</span>.name;</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 定义子类Bar</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  Foo.call(<span class="keyword">this</span>, name);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 创建一个新的Bar.prototype对象并关联到Foo.prototype上</span></div><div class="line">Bar.prototype = <span class="built_in">Object</span>.create(Foo.prototype);</div><div class="line"><span class="comment">// 如果需要可以手动改变Bar.prototype.constructor</span></div><div class="line"></div><div class="line"><span class="comment">// 定义Bar自己的方法</span></div><div class="line">Bar.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Hi "</span> + <span class="keyword">this</span>.identify()  + <span class="string">"!"</span>);</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 实例化Bar</span></div><div class="line"><span class="keyword">var</span> bar1 = <span class="keyword">new</span> Bar(<span class="string">"whiskey"</span>);</div><div class="line"></div><div class="line">bar1.sayHi(); <span class="comment">// "Hi I'm whiskey!"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>OLOO</code>对象关联风格</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建Foo对象</span></div><div class="line">Foo = &#123;</div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">  &#125;,</div><div class="line">  identify: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">"I'm "</span> + <span class="keyword">this</span>.name;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 通过Object.create创建Bar，把Bar的[[prototype]]委托给Foo</span></div><div class="line"><span class="keyword">var</span> Bar = <span class="built_in">Object</span>.create(Foo);</div><div class="line"><span class="comment">// 创建Bar对象之间的方法</span></div><div class="line">Bar.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"Hi "</span> + <span class="keyword">this</span>.identify() + <span class="string">"!"</span>);</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 通过Object.create创建bar1，把Bar的[[prototype]]委托给Bar</span></div><div class="line"><span class="keyword">var</span> bar1 = <span class="built_in">Object</span>.create(Bar);</div><div class="line"><span class="comment">// 初始化bar1对象，传入name</span></div><div class="line">bar1.init(<span class="string">"whiskey"</span>);</div><div class="line">bar1.sayHi(); <span class="comment">// "Hi I'm whiskey!"</span></div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/OLOO/" rel="tag">#OLOO</a>
+          
+            <a href="/tags/原型/" rel="tag">#原型</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/15/20160715/" rel="next" title="你不知道的javascript上卷(笔记一)">
+                <i class="fa fa-chevron-left"></i> 你不知道的javascript上卷(笔记一)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习前端的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#for-of"><span class="nav-number">1.</span> <span class="nav-text">for..of</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-assign"><span class="nav-number">2.</span> <span class="nav-text">Object.assign()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象属性描述符"><span class="nav-number">3.</span> <span class="nav-text">对象属性描述符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OO-vs-OLOO"><span class="nav-number">4.</span> <span class="nav-text">OO vs OLOO</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2016/07/16/20160716/';
+      var disqus_title = "你不知道的javascript上卷(笔记二)";
+      var disqus_url = 'http://yoursite.com/2016/07/16/20160716/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
