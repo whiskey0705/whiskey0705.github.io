@@ -4,18 +4,16 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/07/15/20160715/</loc>
-    <lastmod>2016-07-15T15:24:13.631Z</lastmod>
+    <loc>http://yoursite.com/2016/07/01/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E4%BA%94/</loc>
+    <lastmod>2016-07-16T06:58:37.169Z</lastmod>
     <data>
         <display>
-        <title>let、const、模块module、this</title>
-        <pubTime>2016-07-15T14:21:00.000Z</pubTime>
+        <title>笔记整理（五）</title>
+        <pubTime>2016-07-01T00:21:00.000Z</pubTime>
         
         <tag>js</tag>
          
-        <tag>模块</tag>
-         
-        <tag>this</tag>
+        <tag>笔记整理</tag>
          
          
            
@@ -28,16 +26,18 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/07/01/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E4%BA%94/</loc>
-    <lastmod>2016-07-12T06:42:08.245Z</lastmod>
+    <loc>http://yoursite.com/2016/07/15/20160715/</loc>
+    <lastmod>2016-07-15T15:24:13.631Z</lastmod>
     <data>
         <display>
-        <title>笔记整理（五）</title>
-        <pubTime>2016-07-01T00:21:00.000Z</pubTime>
+        <title>let、const、模块module、this</title>
+        <pubTime>2016-07-15T14:21:00.000Z</pubTime>
         
         <tag>js</tag>
          
-        <tag>笔记整理</tag>
+        <tag>模块</tag>
+         
+        <tag>this</tag>
          
          
            
