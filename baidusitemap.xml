@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/07/16/20160716/</loc>
+    <lastmod>2016-07-18T15:38:15.169Z</lastmod>
+    <data>
+        <display>
+        <title>你不知道的javascript上卷(笔记二)</title>
+        <pubTime>2016-07-16T15:21:00.000Z</pubTime>
+        
+        <tag>OLOO</tag>
+         
+        <tag>原型</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/07/15/20160715/</loc>
-    <lastmod>2016-07-16T15:21:18.050Z</lastmod>
+    <lastmod>2016-07-18T15:30:31.624Z</lastmod>
     <data>
         <display>
         <title>你不知道的javascript上卷(笔记一)</title>
@@ -28,30 +50,8 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/07/16/20160716/</loc>
-    <lastmod>2016-07-16T15:20:57.187Z</lastmod>
-    <data>
-        <display>
-        <title>你不知道的javascript上卷(笔记二)</title>
-        <pubTime>2016-07-16T15:21:00.000Z</pubTime>
-        
-        <tag>OLOO</tag>
-         
-        <tag>原型</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2016/07/01/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E4%BA%94/</loc>
-    <lastmod>2016-07-16T07:07:06.481Z</lastmod>
+    <lastmod>2016-07-18T15:15:20.512Z</lastmod>
     <data>
         <display>
         <title>笔记整理（五）</title>
@@ -73,7 +73,7 @@
     
   <url>
     <loc>http://yoursite.com/2016/06/30/%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E5%9B%9B/</loc>
-    <lastmod>2016-07-11T01:01:13.863Z</lastmod>
+    <lastmod>2016-07-18T15:06:23.584Z</lastmod>
     <data>
         <display>
         <title>笔记整理（四）</title>
