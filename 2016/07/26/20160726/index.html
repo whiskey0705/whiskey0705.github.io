@@ -99,7 +99,7 @@
 
 响应式布局&amp;lt;meta&amp;gt;标签设置(用理想视口作为布局视口，初始缩放为1)
 1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&amp;">
-<meta property="og:updated_time" content="2016-07-26T05:20:28.838Z">
+<meta property="og:updated_time" content="2016-07-28T13:37:32.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《所向披靡的响应式开发》笔记">
 <meta name="twitter:description" content="设置IE兼容性，强制用最新版本的IE来渲染页面
@@ -375,7 +375,7 @@
 <li>右键点击文件(html/css/js)，<code>split</code>可实现分屏显示；<code>local History</code>可以显示历史修改记录</li>
 <li><code>多光标</code>：<code>alt</code> + 鼠标左键拖动，连续选择/选择一个，按住alt不放，双击下一个，有目标性选择</li>
 <li>跳转目标行：<code>ctrl</code> + G</li>
-<li>代码格式：<code>ctrl</code> + <code>alt</code> + L</li>
+<li>代码格式化：<code>ctrl</code> + <code>alt</code> + L</li>
 <li>历史剪贴板：<code>ctrl</code> + <code>shift</code> + V</li>
 <li>光标所在行的上方新建行：<code>ctrl</code> + <code>alt</code> + <code>enter</code></li>
 <li>光标所在行的下方新建行：<code>shift</code> + <code>enter</code></li>
@@ -407,6 +407,17 @@
 </li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入插件依赖</span></div><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"><span class="keyword">var</span> rev = <span class="built_in">require</span>(<span class="string">'gulp-rev'</span>);</div><div class="line"><span class="keyword">var</span> revReplace = <span class="built_in">require</span>(<span class="string">'gulp-rev-replace'</span>);</div><div class="line"><span class="keyword">var</span> useref = <span class="built_in">require</span>(<span class="string">'gulp-useref'</span>);</div><div class="line"><span class="keyword">var</span> filter = <span class="built_in">require</span>(<span class="string">'gulp-filter'</span>);</div><div class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</div><div class="line"><span class="keyword">var</span> csso = <span class="built_in">require</span>(<span class="string">'gulp-csso'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 创建任务</span></div><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">// 创建js过滤规则</span></div><div class="line">    <span class="keyword">var</span> jsFillter = filter(<span class="string">'**/*.js'</span>, &#123;restore: <span class="literal">true</span>&#125;);</div><div class="line">    <span class="keyword">var</span> cssFilter = filter(<span class="string">'**/*.css'</span>, &#123;restore: <span class="literal">true</span>&#125;);</div><div class="line">    <span class="keyword">var</span> indexHtmlFilter = filter([<span class="string">'**/*'</span>, <span class="string">'!**/index.html'</span>], &#123;restore: <span class="literal">true</span>&#125;); <span class="comment">//！是排除，这里把index排除掉</span></div><div class="line"></div><div class="line">	<span class="comment">// 拿到要处理的文件index.html</span></div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'src/index.html'</span>)</div><div class="line">        .pipe(useref()) </div><div class="line">        .pipe(jsFillter)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(jsFillter.restore)</div><div class="line">        .pipe(cssFilter)</div><div class="line">        .pipe(csso())</div><div class="line">        .pipe(cssFilter.restore)</div><div class="line">        .pipe(indexHtmlFilter)</div><div class="line">        .pipe(rev())</div><div class="line">        .pipe(indexHtmlFilter.restore)</div><div class="line">        .pipe(revReplace())</div><div class="line">        .pipe(gulp.dest(<span class="string">'dist'</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="解决npm安装速度过慢"><a href="#解决npm安装速度过慢" class="headerlink" title="解决npm安装速度过慢"></a>解决<code>npm</code>安装速度过慢</h2><ul>
+<li>通过npm config参数设置<ul>
+<li>npm config set registry <strong><a href="http://registry.cnpmjs.org" target="_blank" rel="external">http://registry.cnpmjs.org</a></strong></li>
+<li>加粗地址还可以替换为<strong><a href="http://registry.npm.taobao.org" target="_blank" rel="external">http://registry.npm.taobao.org</a></strong></li>
+</ul>
+</li>
+<li>查询<code>npm</code>配置：<code>npm config ls -l</code>，重点看下registry属性是否被替换</li>
+<li><code>--save</code>自动把模块加到package.json的<code>dependencies</code>里</li>
+<li><code>--save-dev</code>自动把模块加到package.json的<code>devDependencies</code>里</li>
+</ul>
+
       
     </div>
 
@@ -566,7 +577,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决npm安装速度过慢"><span class="nav-number">1.</span> <span class="nav-text">解决npm安装速度过慢</span></a></li></ol></div>
             
           </div>
         </section>
