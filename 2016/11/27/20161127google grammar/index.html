@@ -91,9 +91,12 @@
 
 
 精确搜索
-限定关键词的排列比如搜索电脑游戏,得到的结果可能是这样——网页头部出现电脑，在网页尾部出现游戏；如果要搜索结果是紧挨着的电脑游戏，语法如下
+限定关键词的排列
 
-12345&amp;quot;电脑游戏&amp;quot;    //引号一定要用半角的`">
+比如搜索电脑游戏,得到的结果可能是这样——网页头部出现电脑，在网页尾部出现游戏；如果要搜索结果是紧挨着的电脑游戏，语法如下
+&amp;quot;电脑游戏&amp;quot;    //引号一定要用半角的 
+
+限定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="google语法">
 <meta property="og:url" content="http://yoursite.com/2016/11/27/20161127google grammar/index.html">
@@ -104,10 +107,13 @@
 
 
 精确搜索
-限定关键词的排列比如搜索电脑游戏,得到的结果可能是这样——网页头部出现电脑，在网页尾部出现游戏；如果要搜索结果是紧挨着的电脑游戏，语法如下
+限定关键词的排列
 
-12345&amp;quot;电脑游戏&amp;quot;    //引号一定要用半角的`">
-<meta property="og:updated_time" content="2016-12-11T04:53:58.211Z">
+比如搜索电脑游戏,得到的结果可能是这样——网页头部出现电脑，在网页尾部出现游戏；如果要搜索结果是紧挨着的电脑游戏，语法如下
+&amp;quot;电脑游戏&amp;quot;    //引号一定要用半角的 
+
+限定">
+<meta property="og:updated_time" content="2016-12-11T05:03:21.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="google语法">
 <meta name="twitter:description" content="关键词的逻辑关系
@@ -116,9 +122,12 @@
 
 
 精确搜索
-限定关键词的排列比如搜索电脑游戏,得到的结果可能是这样——网页头部出现电脑，在网页尾部出现游戏；如果要搜索结果是紧挨着的电脑游戏，语法如下
+限定关键词的排列
 
-12345&amp;quot;电脑游戏&amp;quot;    //引号一定要用半角的`">
+比如搜索电脑游戏,得到的结果可能是这样——网页头部出现电脑，在网页尾部出现游戏；如果要搜索结果是紧挨着的电脑游戏，语法如下
+&amp;quot;电脑游戏&amp;quot;    //引号一定要用半角的 
+
+限定">
 
 
 
@@ -353,35 +362,59 @@
 </li>
 </ul>
 <h2 id="精确搜索"><a href="#精确搜索" class="headerlink" title="精确搜索"></a>精确搜索</h2><ul>
-<li>限定关键词的排列<br>比如搜索<code>电脑游戏</code>,得到的结果可能是这样——网页头部出现<code>电脑</code>，在网页尾部出现<code>游戏</code>；如果要搜索结果是紧挨着的<code>电脑游戏</code>，语法如下</li>
+<li>限定关键词的排列</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;电脑游戏&quot;    //引号一定要用半角的</div><div class="line">``` </div><div class="line"></div><div class="line">- 限定搜索的网站</div><div class="line">	- 限定具体的网站域名（`site`之后不需要添加`http://`）</div></pre></td></tr></table></figure>
-<pre><code>杨幂 site:www.163.com    //搜索结果显示网易上收录的所有包含杨幂的页面
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 限定具体的网站域名及目录名(如果知道网站的目录名，还可以更加精准的搜索)</div></pre></td></tr></table></figure>
-
-刘若英 site:www.sina.com/2016/11    //搜索结果显示新浪网2016/11目录下收录的所有包含刘若英的页面
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 部分限定域名</div></pre></td></tr></table></figure>
-
-语文 site:.edu.cn    //搜索结果显示国内教育网上收录的所有包含语文的页面
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 限定搜索的网页元素</div><div class="line">	- 只搜索标题</div></pre></td></tr></table></figure>
-
-关键词1 intitle:关键词2    //要求关键词2必须在标题中，关键词1可以在网页任何的地方
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">	</div></pre></td></tr></table></figure>
-
-allintitle:关键词1 关键词2    //要求两个关键词都在标题中
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">	- 只搜索网页正文(`intext`,`allintext`)</div><div class="line">	- 只搜索URL网址(`inurl`,`allinurl`)</div><div class="line">	- 只搜索网页中的超链接(`inanchor`,`allinancor`)</div><div class="line">	- 后面的3中搜索语法同第1条</div><div class="line"></div><div class="line">- 限定文件格式</div></pre></td></tr></table></figure>
-
-权力的游戏 filetype:pdf    //搜索结果显示权利的游戏.pdf
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 模糊搜索</div><div class="line">- 同义词（波浪号）</div></pre></td></tr></table></figure>
-</code></pre><p>~开心    //波浪号表示搜索同义词，既能收到开心也能收到快乐，波浪号要用半角<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 数字范围（两点）,在两个数字之间放两个小数点`..`（半角）表示模糊搜索该数字范围</div></pre></td></tr></table></figure></p>
-<p>世界杯 2002..2010    //搜索2002与2010之间的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">世界杯 2002..    //搜索大于2002的数字</div></pre></td></tr></table></figure></p>
+<p>比如搜索<code>电脑游戏</code>,得到的结果可能是这样——网页头部出现<code>电脑</code>，在网页尾部出现<code>游戏</code>；如果要搜索结果是紧挨着的<code>电脑游戏</code>，语法如下</p>
+<p><code>&quot;电脑游戏&quot;</code>    //引号一定要用半角的 </p>
 <ul>
-<li>通配符（星号）<br>可以用星号<code>*</code>（半角）指代任何一个词汇。比如”一醉方休”，第二个字不会写，可以用如下语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">“一*方休”    //可以搜索到一醉方休</div></pre></td></tr></table></figure>
+<li><p>限定搜索的网站</p>
+<ul>
+<li><p>限定具体的网站域名（<code>site</code>之后不需要添加<code>http://</code>）</p>
+<p><code>杨幂 site:www.163.com</code>    //搜索结果显示网易上收录的所有包含杨幂的页面</p>
+</li>
+<li><p>限定具体的网站域名及目录名(如果知道网站的目录名，还可以更加精准的搜索)</p>
+<p><code>刘若英 site:www.sina.com/2016/11</code>    //搜索结果显示新浪网2016/11目录下收录的所有包含刘若英的页面</p>
+</li>
+<li><p>部分限定域名</p>
+<p><code>语文 site:.edu.cn</code>    //搜索结果显示国内教育网上收录的所有包含语文的页面</p>
 </li>
 </ul>
-<p>星号也可以配合<code>site:</code>语法使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">abc.com.cn</div><div class="line">abc.com.uk</div><div class="line">abc.com.jp</div><div class="line">关键词 site:abc.com.*    //可以限定搜索范围在上述三个域名</div></pre></td></tr></table></figure></p>
-<h2 id="排除某些关键词"><a href="#排除某些关键词" class="headerlink" title="排除某些关键词"></a>排除某些关键词</h2><p>紧挨着关键词之前放减号<code>-</code>（半角），表示排除该关键词<br>比如搜索<code>甲骨文</code>，即会搜到<code>考古</code>方面的，也会搜到<code>Oracle数据库</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">甲骨文 -数据库    //排除数据库相关的结果</div></pre></td></tr></table></figure></p>
-<h2 id="括号的使用"><a href="#括号的使用" class="headerlink" title="括号的使用"></a>括号的使用</h2><p>混合使用上述几个语法时，可以用括号来提高优先级<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">关键词1 关键词2 (关键词3 OR 关键词4)</div></pre></td></tr></table></figure></p>
+</li>
+<li><p>限定搜索的网页元素</p>
+<ul>
+<li><p>只搜索标题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">关键词1 intitle:关键词2    //要求关键词2必须在标题中，关键词1可以在网页任何的地方</div><div class="line"></div><div class="line">allintitle:关键词1 关键词2    //要求两个关键词都在标题中</div></pre></td></tr></table></figure>
+</li>
+<li><p>只搜索网页正文(<code>intext</code>,<code>allintext</code>)</p>
+</li>
+<li>只搜索URL网址(<code>inurl</code>,<code>allinurl</code>)</li>
+<li>只搜索网页中的超链接(<code>inanchor</code>,<code>allinancor</code>)</li>
+<li>后面的3中搜索语法同第1条</li>
+</ul>
+</li>
+<li><p>限定文件格式</p>
+<p>  <code>权力的游戏 filetype:pdf</code>    //搜索结果显示权利的游戏.pdf</p>
+</li>
+</ul>
+<h2 id="模糊搜索"><a href="#模糊搜索" class="headerlink" title="模糊搜索"></a>模糊搜索</h2><ul>
+<li>同义词（波浪号）</li>
+</ul>
+<p><code>~开心</code>    //波浪号表示搜索同义词，既能收到开心也能收到快乐，波浪号要用半角</p>
+<ul>
+<li>数字范围（两点）,在两个数字之间放两个小数点<code>..</code>（半角）表示模糊搜索该数字范围</li>
+</ul>
+<p><code>世界杯 2002..2010</code>    //搜索2002与2010之间的</p>
+<p><code>世界杯 2002..</code>    //搜索大于2002的数字</p>
+<ul>
+<li>通配符（星号）</li>
+</ul>
+<p>可以用星号<code>*</code>（半角）指代任何一个词汇。比如”一醉方休”，第二个字不会写，可以用如下语法</p>
+<p><code>“一*方休”</code>    //可以搜索到一醉方休</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">星号也可以配合`site:`语法使用</div><div class="line">abc.com.cn</div><div class="line">abc.com.uk</div><div class="line">abc.com.jp</div><div class="line">关键词 site:abc.com.*    //可以限定搜索范围在上述三个域名</div></pre></td></tr></table></figure>
+<h2 id="排除某些关键词"><a href="#排除某些关键词" class="headerlink" title="排除某些关键词"></a>排除某些关键词</h2><p>紧挨着关键词之前放减号<code>-</code>（半角），表示排除该关键词<br>比如搜索<code>甲骨文</code>，即会搜到<code>考古</code>方面的，也会搜到<code>Oracle数据库</code></p>
+<p><code>甲骨文 -数据库</code>    //排除数据库相关的结果</p>
+<h2 id="括号的使用"><a href="#括号的使用" class="headerlink" title="括号的使用"></a>括号的使用</h2><p>混合使用上述几个语法时，可以用括号来提高优先级</p>
+<p><code>关键词1 关键词2</code> (关键词3 OR 关键词4)</p>
 
       
     </div>
@@ -540,7 +573,7 @@ allintitle:关键词1 关键词2    //要求两个关键词都在标题中
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键词的逻辑关系"><span class="nav-number">1.</span> <span class="nav-text">关键词的逻辑关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精确搜索"><span class="nav-number">2.</span> <span class="nav-text">精确搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排除某些关键词"><span class="nav-number">3.</span> <span class="nav-text">排除某些关键词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#括号的使用"><span class="nav-number">4.</span> <span class="nav-text">括号的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关键词的逻辑关系"><span class="nav-number">1.</span> <span class="nav-text">关键词的逻辑关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精确搜索"><span class="nav-number">2.</span> <span class="nav-text">精确搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模糊搜索"><span class="nav-number">3.</span> <span class="nav-text">模糊搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#排除某些关键词"><span class="nav-number">4.</span> <span class="nav-text">排除某些关键词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#括号的使用"><span class="nav-number">5.</span> <span class="nav-text">括号的使用</span></a></li></ol></div>
             
           </div>
         </section>
