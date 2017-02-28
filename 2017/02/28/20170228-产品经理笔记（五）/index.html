@@ -1,0 +1,841 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="baidu-site-verification" content="2lyoO0yh6Q" />
+<meta name="google-site-verification" content="ZKcbbSOVKKZQOLMuVKiM3VOmVk4NkmoZGgxMRzq6588" />
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="客户开发," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是客户开发（Customer development）客户开发是一项重要的手段，产品经理通过客户开发获得反馈，来确定构建的产品的方向是否正确。产品经理通过客户开发，来减少风险，把握机会。
+客户开发周期
+确认： 在这个阶段，你需要和客户面谈确认产品的需求以及需要解决的真正问题
+开发第一版： 根据之前客户的需求，构建产品特征
+迭代： 在这个阶段需要改进产品，询问客户是否喜欢该产品，哪些特征缺失，哪">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品经理笔记（五）">
+<meta property="og:url" content="http://yoursite.com/2017/02/28/20170228-产品经理笔记（五）/index.html">
+<meta property="og:site_name" content="五马街">
+<meta property="og:description" content="什么是客户开发（Customer development）客户开发是一项重要的手段，产品经理通过客户开发获得反馈，来确定构建的产品的方向是否正确。产品经理通过客户开发，来减少风险，把握机会。
+客户开发周期
+确认： 在这个阶段，你需要和客户面谈确认产品的需求以及需要解决的真正问题
+开发第一版： 根据之前客户的需求，构建产品特征
+迭代： 在这个阶段需要改进产品，询问客户是否喜欢该产品，哪些特征缺失，哪">
+<meta property="og:updated_time" content="2017-02-28T14:55:02.345Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="产品经理笔记（五）">
+<meta name="twitter:description" content="什么是客户开发（Customer development）客户开发是一项重要的手段，产品经理通过客户开发获得反馈，来确定构建的产品的方向是否正确。产品经理通过客户开发，来减少风险，把握机会。
+客户开发周期
+确认： 在这个阶段，你需要和客户面谈确认产品的需求以及需要解决的真正问题
+开发第一版： 根据之前客户的需求，构建产品特征
+迭代： 在这个阶段需要改进产品，询问客户是否喜欢该产品，哪些特征缺失，哪">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/28/20170228-产品经理笔记（五）/"/>
+
+  <title> 产品经理笔记（五） | 五马街 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?66bcdf0aaf79e03a78fdd2a2bfee00be";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">五马街</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">人生唯一的安全感，来自于充分体验人生的不安全感。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                产品经理笔记（五）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-28T11:22:15+08:00" content="2017-02-28">
+              2017-02-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/产品经理/" itemprop="url" rel="index">
+                    <span itemprop="name">产品经理</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/28/20170228-产品经理笔记（五）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/28/20170228-产品经理笔记（五）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是客户开发（Customer-development）"><a href="#什么是客户开发（Customer-development）" class="headerlink" title="什么是客户开发（Customer development）"></a>什么是客户开发（Customer development）</h1><p>客户开发是一项重要的手段，产品经理通过客户开发获得反馈，来确定构建的产品的方向是否正确。产品经理通过客户开发，来减少风险，把握机会。</p>
+<h2 id="客户开发周期"><a href="#客户开发周期" class="headerlink" title="客户开发周期"></a>客户开发周期</h2><ul>
+<li>确认： 在这个阶段，你需要和客户面谈确认产品的需求以及需要解决的真正问题</li>
+<li>开发第一版： 根据之前客户的需求，构建产品特征</li>
+<li>迭代： 在这个阶段需要改进产品，询问客户是否喜欢该产品，哪些特征缺失，哪些功能需要添加</li>
+</ul>
+<h1 id="和客户面谈的四种类型"><a href="#和客户面谈的四种类型" class="headerlink" title="和客户面谈的四种类型"></a>和客户面谈的四种类型</h1><ul>
+<li><p>探索面谈（Exploratory interview）</p>
+<ul>
+<li>形式自由，帮助客户确定痛点，以及探讨可行的解决方案</li>
+<li>以客户的视角谈论产品，观察他们准备如何使用产品，是否愿意付费</li>
+<li>提开放式的问题</li>
+</ul>
+</li>
+<li><p>确认面谈（Validation interview）</p>
+<ul>
+<li>你有了一套理论并准备测试，需要通过科学的方法</li>
+<li>在谈论最后才说出你的理论，避免先入为主</li>
+<li>在描述的时候应该尽量保持客观</li>
+<li>让客户自己描述问题所在</li>
+</ul>
+</li>
+<li><p>满意导向面谈（Satisfaction oriented interview）</p>
+<ul>
+<li>找出产品好的和不好的地方</li>
+<li>明白客户为什么满意和不满意</li>
+</ul>
+</li>
+<li><p>效率面谈（Efficiency interview）</p>
+<ul>
+<li>通过什么途径可以让产品更好地为目标服务</li>
+<li>了解客户如何使用产品以及对产品功能的期待</li>
+</ul>
+</li>
+</ul>
+<h1 id="不同种类的客户开发"><a href="#不同种类的客户开发" class="headerlink" title="不同种类的客户开发"></a>不同种类的客户开发</h1><p>客户开发贯穿产品的整个生命周期</p>
+<ul>
+<li><p>未发布的产品</p>
+<ul>
+<li>潜在的客户</li>
+<li>客户不知道你的产品</li>
+<li>比较难接触客户</li>
+<li>应该关注痛点和方案的可行性</li>
+</ul>
+</li>
+<li><p>已发布的产品</p>
+<ul>
+<li>存在已有客户</li>
+<li>客户知道你的产品</li>
+<li>比如容易接触客户</li>
+<li>关注满意度、可用性和痛点</li>
+</ul>
+</li>
+</ul>
+<h1 id="如何建立目标客户群"><a href="#如何建立目标客户群" class="headerlink" title="如何建立目标客户群"></a>如何建立目标客户群</h1><p>首先确定目标客户是谁，根据产品是否发布，会有不同的目标客户。</p>
+<ul>
+<li><p>未发布的产品： 你仍在确认阶段，大家喜欢这个产品吗，产品是否有市场？</p>
+<ul>
+<li>情况1：你脑袋里已经有潜在客户，你将对他们进行开发</li>
+<li>情况2：没有目标</li>
+<li>问3个问题<ul>
+<li>给产品预设三类潜在客户</li>
+<li>产品解决了什么问题</li>
+<li>谁会有这样的问题</li>
+</ul>
+</li>
+<li><p>3个标准</p>
+<ul>
+<li>大小： 市场份额</li>
+<li>痛点： 支付形式</li>
+<li>可得性（Accessibility）：是否容易接触客户</li>
+</ul>
+</li>
+<li><p>哪里寻找客户</p>
+<ul>
+<li>LinkedIn</li>
+<li>论坛</li>
+<li>Twitter</li>
+<li>你的竞争对手</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>已发布的产品：已经有客户基础了，根据反馈选出最合适的目标 </p>
+<ul>
+<li>如何与客户交流<ul>
+<li>使用公司的实时聊天系统</li>
+<li>通过公司的blog</li>
+<li>Twitter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="如何让客户和你对话"><a href="#如何让客户和你对话" class="headerlink" title="如何让客户和你对话"></a>如何让客户和你对话</h1><ul>
+<li>简短：没人会看大篇幅的陌生邮件，理想的长度是4-7句话</li>
+<li>人性化<ul>
+<li>没人喜欢和机器人对话</li>
+<li>主动阐明来意</li>
+</ul>
+</li>
+<li>价值体验<ul>
+<li>让客户觉得对话是有价值的</li>
+<li>客户喜欢帮助的感觉</li>
+<li>告诉客户他们的反馈对你很重要</li>
+<li>物质奖励</li>
+<li>告知对方能并非销售</li>
+<li>让对方感受到特殊待遇</li>
+</ul>
+</li>
+</ul>
+<h1 id="如何组织邮件内容"><a href="#如何组织邮件内容" class="headerlink" title="如何组织邮件内容"></a>如何组织邮件内容</h1><ol>
+<li>介绍（1-2句），告诉对方你在哪里找到他们的联系方式以及你注意到的问题</li>
+<li>2句话阐述你为什么想交谈</li>
+<li>1句话安排见面时间</li>
+</ol>
+<h1 id="如何进行正确的客户面谈"><a href="#如何进行正确的客户面谈" class="headerlink" title="如何进行正确的客户面谈"></a>如何进行正确的客户面谈</h1><p>你想要确保得到精确和有用的信息，面谈的主题不是你的产品</p>
+<ul>
+<li>不要谈你的解决方式<ul>
+<li>谈客户遇到的问题</li>
+<li>客户可能不知道他们想要（want）的是什么，但是他们无法隐藏需求（need）</li>
+</ul>
+</li>
+<li>不要谈你自己的观点<ul>
+<li>应该以客户为主</li>
+<li>有时可能会迸发出新的想法</li>
+</ul>
+</li>
+<li><p>创造一个舒适的环境</p>
+<ul>
+<li>不要问会使他们紧张或者不舒服的问题</li>
+<li>对于反馈信息不要反应过度，不应该消极</li>
+<li>尽可能保持中立，不要走批判路线</li>
+</ul>
+</li>
+<li><p>不要强迫面谈走势，应该引领</p>
+<ul>
+<li>让客户谈他们的关注点</li>
+<li>这样的方式可以让你得到更多的信息</li>
+<li>当你卡住的时候，可以表达你很感兴趣，希望对方多讲一些</li>
+</ul>
+</li>
+<li><p>5个W</p>
+<ul>
+<li>谁是你的客户</li>
+<li>他们有什么习惯</li>
+<li>他们什么时候需要产品</li>
+<li>在什么地方需要用到它</li>
+<li>为什么他们需要它</li>
+</ul>
+</li>
+</ul>
+<h1 id="好问题和坏问题"><a href="#好问题和坏问题" class="headerlink" title="好问题和坏问题"></a>好问题和坏问题</h1><p>坏问题会让答案带上偏见，好问题可以得到真实的反馈</p>
+<ul>
+<li>原则一： 永远问开放性的问题</li>
+<li>原则二： 不要问二元性问题（可以用是或者不是回答）</li>
+<li>原则三： 不要问假设的问题</li>
+<li>原则四： 不要问导向性的问题</li>
+<li>原则五： 不要问可能促使对方撒谎的问题</li>
+</ul>
+<h1 id="创建一个虚拟角色"><a href="#创建一个虚拟角色" class="headerlink" title="创建一个虚拟角色"></a>创建一个虚拟角色</h1><p>创建一个虚拟角色可以更好的呈现相似用户的行为习惯</p>
+<ul>
+<li>虚拟角色可以与相似行为的用户产生共鸣</li>
+<li>虚拟角色的信息包括<ul>
+<li>名字、年龄、照片、简介</li>
+<li>对他们来说最重要的是产品的哪个特征</li>
+<li>他们有什么更进一步的需求</li>
+</ul>
+</li>
+</ul>
+<h1 id="如何确定你收集了足够多的信息"><a href="#如何确定你收集了足够多的信息" class="headerlink" title="如何确定你收集了足够多的信息"></a>如何确定你收集了足够多的信息</h1><p>你不可能只依据一个信息源，就做出决定，因为这样会冒很大风险做出错误的产品。客户面谈反馈只是一种信息源</p>
+<ul>
+<li>有用的信息源<ul>
+<li>内部反馈</li>
+<li>用户测试数据</li>
+<li>网络反馈</li>
+<li>分析系统</li>
+<li>新闻</li>
+<li>市场趋势</li>
+<li>观察竞争对手</li>
+</ul>
+</li>
+</ul>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://customerdiscovery.com/mistake-avoid-customer-discovery-interviews/" target="_blank" rel="external">Avoiding bias in customer discovery interviews</a></li>
+<li><a href="http://www.huffingtonpost.com/michael-b-fishbein/7-common-customer-develop_b_4311877.html" target="_blank" rel="external">7 Common Customer Development Mistakes and How to Avoid Them</a></li>
+<li><a href="https://www.fastcompany.com/56447/customer-experience" target="_blank" rel="external">The Customer Experience</a></li>
+<li><a href="https://www.fastcompany.com/3036672/hit-the-ground-running/what-we-learned-from-sending-1000-cold-emails" target="_blank" rel="external">What We Learned From Sending 1000 Cold Emails</a></li>
+<li><a href="https://blog.hubspot.com/marketing/write-cold-email-get-response#sm.00000a04l8xyryfdwpn1de66c2g4a" target="_blank" rel="external">How to Write a Cold Email That’ll Actually Get a Response</a></li>
+<li><a href="https://www.surveymonkey.com/blog/2015/02/11/5-common-survey-mistakes-ruin-your-data/" target="_blank" rel="external">5 Common Survey Question Mistakes That’ll Ruin Your Data</a></li>
+<li><a href="https://www.forbes.com/sites/eilenezimmerman/2015/04/20/steve-blank-on-why-most-startups-fail-and-its-got-nothing-to-do-with-technology/#61ee4e3920cc" target="_blank" rel="external">Steve Blank On Why Most Startups Fail, And It’s Got Nothing To Do With Technology</a></li>
+<li><a href="https://zapier.com/learn/customer-support/collect-customer-feedback/" target="_blank" rel="external">How to Collect Customer Feedback That’s Actually Valuable</a></li>
+<li><a href="https://blog.kissmetrics.com/best-ways-to-get-feedback/" target="_blank" rel="external">The 5 Best Ways to Get Feedback from Your Customers</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/客户开发/" rel="tag">#客户开发</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/27/20170227-产品经理笔记（四）/" rel="next" title="产品经理笔记（四）">
+                <i class="fa fa-chevron-left"></i> 产品经理笔记（四）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrwo9.com1.z0.glb.clouddn.com/avtar.png"
+               alt="whiskey0705" />
+          <p class="site-author-name" itemprop="name">whiskey0705</p>
+          <p class="site-description motion-element" itemprop="description">记录学习的点点滴滴</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是客户开发（Customer-development）"><span class="nav-number">1.</span> <span class="nav-text">什么是客户开发（Customer development）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户开发周期"><span class="nav-number">1.1.</span> <span class="nav-text">客户开发周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#和客户面谈的四种类型"><span class="nav-number">2.</span> <span class="nav-text">和客户面谈的四种类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不同种类的客户开发"><span class="nav-number">3.</span> <span class="nav-text">不同种类的客户开发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何建立目标客户群"><span class="nav-number">4.</span> <span class="nav-text">如何建立目标客户群</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何让客户和你对话"><span class="nav-number">5.</span> <span class="nav-text">如何让客户和你对话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何组织邮件内容"><span class="nav-number">6.</span> <span class="nav-text">如何组织邮件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何进行正确的客户面谈"><span class="nav-number">7.</span> <span class="nav-text">如何进行正确的客户面谈</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#好问题和坏问题"><span class="nav-number">8.</span> <span class="nav-text">好问题和坏问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建一个虚拟角色"><span class="nav-number">9.</span> <span class="nav-text">创建一个虚拟角色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何确定你收集了足够多的信息"><span class="nav-number">10.</span> <span class="nav-text">如何确定你收集了足够多的信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">11.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">whiskey0705</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'fancypy';
+      var disqus_identifier = '2017/02/28/20170228-产品经理笔记（五）/';
+      var disqus_title = "产品经理笔记（五）";
+      var disqus_url = 'http://yoursite.com/2017/02/28/20170228-产品经理笔记（五）/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
