@@ -4,26 +4,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/16/20170416-Discover%20Flask(%E4%B8%80)/</loc>
-    <lastmod>2017-04-16T14:58:40.420Z</lastmod>
-    <data>
-        <display>
-        <title>Discover Flask(part1-6)</title>
-        <pubTime>2017-04-16T14:32:15.000Z</pubTime>
-        
-        <tag>flask</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://yoursite.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/03/03/20170303-%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/</loc>
     <lastmod>2017-03-03T13:48:49.511Z</lastmod>
     <data>
@@ -293,9 +273,9 @@
         <title>你不知道的javascript上卷(笔记二)</title>
         <pubTime>2016-07-16T15:21:00.000Z</pubTime>
         
-        <tag>OLOO</tag>
-         
         <tag>原型</tag>
+         
+        <tag>OLOO</tag>
          
          
            
@@ -747,9 +727,9 @@
         <title>笔记整理（一）</title>
         <pubTime>2016-06-27T11:21:15.000Z</pubTime>
         
-        <tag>布局</tag>
-         
         <tag>笔记整理</tag>
+         
+        <tag>布局</tag>
          
          
            
@@ -769,9 +749,9 @@
         <title>笔记整理（三）</title>
         <pubTime>2016-06-29T04:21:00.000Z</pubTime>
         
-        <tag>布局</tag>
-         
         <tag>笔记整理</tag>
+         
+        <tag>布局</tag>
          
          
            
@@ -791,9 +771,9 @@
         <title>笔记整理（二）</title>
         <pubTime>2016-06-28T12:21:00.000Z</pubTime>
         
-        <tag>笔记整理</tag>
-         
         <tag>BFC</tag>
+         
+        <tag>笔记整理</tag>
          
          
            
